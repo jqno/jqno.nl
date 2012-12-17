@@ -1,38 +1,31 @@
-<!doctype html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="{{ site.author }}">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ site.title }}{% if page.title %} &mdash; {{ page.title }}{% endif %}</title>
-  <link rel="stylesheet" type="text/css" href="{{ site.root }}css/simple.css" />
-  <!--link rel="stylesheet" href="http://basehold.it/31/ff0000"-->
-</head>
+{% import 'macros_google.html' as google %}
+{% import "macros_less.html" as less %}
+{% include "head.html" %}
 <body>
-  <div id="container">
-    <header>
-        {% block header %}
-        {% if page.title %}
-        <p class="site-title"><a href="{{ site.root }}">{{ site.title }}</a></p>
-        {% else %}
-        <h1><a href="{{ site.root }}">{{ site.title }}</a></h1>
-        {% endif %}
-        {% endblock %}
-    </header>
-    <section id="main" role="main">
-        {% block main %}
-        {% if page.title %}
-        <h1 class="page-title">{{ page.title }}</h1>
-        {% endif %}
-
-        {{ content|raw }}
-        {% endblock %}
-    </section>
-    <footer>
-        {% block footer %}
-        {% endblock %}
-        <p>{{ piecrust.branding|raw }}</p>
-    </footer>
-  </div>
+  <header role="banner">{% include "header.html" %}</header>
+  <nav role="navigation">{% include "nav.html" %}</nav>
+  	<div id="main">
+        <div id="content">
+            <div class="blog-index">
+				{% block content %}
+				<article>
+					{{ content|raw }}
+				</article>
+        		{% endblock %}
+            </div>
+			<aside class="sidebar">
+				{% include "twitter.html" %}
+				{% block sidebar %}
+					{% include "sidebar_archive.html" %}
+				{% endblock %}
+			</aside>
+        </div>
+    </div>
+	<footer role="contentinfo">
+		{% block footer %}
+		<p>{{ piecrust.branding|raw }}</p>
+		{% endblock %}
+	</footer>
+	{{ piecrust.debug_info|raw }}
 </body>
 </html>
