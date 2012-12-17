@@ -3,7 +3,7 @@ site:
     description: hola!
     author: Anonymous
     pretty_urls: false
-    twitter_handle: hardfire
+    twitter_handle: jqno
     twitter_follow: true
     
 smartypants:
