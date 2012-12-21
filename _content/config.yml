@@ -3,6 +3,7 @@ site:
     description: hola!
     author: Anonymous
     pretty_urls: false
+    blogs: [ post, concerten ]
     twitter_handle: jqno
     twitter_follow: true
     
