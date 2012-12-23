@@ -14,7 +14,3 @@ baker:
     skip_patterns:
         - /^index.php/
 
-#sass config
-sass:
-    load_paths: [templates/sass]
-
