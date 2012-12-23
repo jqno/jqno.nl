@@ -1,0 +1,6 @@
+---
+layout: none
+format: none
+---
+{% set blog = post %}
+{% include 'feed.xml' %}

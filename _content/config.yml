@@ -13,4 +13,8 @@ smartypants:
 baker:
     skip_patterns:
         - /^index.php/
+    config_variants:
+        default:
+            site:
+                root: http://www.jqno.nl
 

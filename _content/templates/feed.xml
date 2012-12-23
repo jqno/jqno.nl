@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+  version="2.0">
+  <channel>
+    <title>{{ site.title }}</title>
+    <description>{{ site.title }}</description>
+    <link>{{ site.root }}</link>
+    <lastBuildDate></lastBuildDate>
+    <generator>PieCrust</generator>
+    {% for post in blog.posts.limit(10) %}
+      <item>
+        <guid>{{ post.slug }}</guid>
+        <title>{{ post.title }}</title>
+        <link>{{ pcurl(post.url) }}</link>
+        <comments>{{ post.url }}#disqus_thread</comments>
+        <pubDate>{{ post.timestamp|date("D, d M Y H:i:s") }}</pubDate>
+        <content:encoded><![CDATA[
+          {{ post.content|raw }} 
+        ]]></content:encoded>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
