@@ -2,7 +2,7 @@ site:
     title: Website Title
     description: hola!
     author: Anonymous
-    pretty_urls: false
+    pretty_urls: true
     blogs: [ post, concerten ]
     analytics: UA-26048593-1
     twitter_handle: jqno
