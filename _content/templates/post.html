@@ -1,4 +1,5 @@
 {% extends "default.html" %}
+{% import "macros_disqus.html" as disqus %}
 
 {% block content %}
     <article role="article">
@@ -19,4 +20,8 @@
         </header>
         {{ content|raw }}
     </article>
+    <section>
+        <h1>Comments</h1>
+        {{ disqus.commentthread("jqno") }}
+    </section>
 {% endblock %}

@@ -1,9 +1,16 @@
-{% macro commentthread(siteid, pageurl, pageid) %}
+{% macro commentthread(siteid, pageurl, pageid, pagetitle) %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = '{{ siteid }}';
-    {% if pageid %}var disqus_identifier = '{{ pageid }}';{% endif %}
-    {% if pageurl %}var disqus_url = '{{ pageurl }}';{% endif %}
+    {% if pageurl %}
+    var disqus_url = '{{ pageurl }}';
+    {% endif %}
+    {% if pageid %}
+    var disqus_identifier = '{{ pageid }}';
+    {% endif %}
+    {% if pagetitle %}
+    var disqus_title = '{{ pagetitle }}';
+    {% endif %}
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -13,4 +20,10 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+{% endmacro %}
+
+{% macro dev() %}
+<script type="text/javascript">
+    var disqus_developer = 1;
+</script>
 {% endmacro %}
