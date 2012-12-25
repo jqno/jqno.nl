@@ -4,6 +4,7 @@ site:
     author: Anonymous
     pretty_urls: false
     blogs: [ post, concerten ]
+    analytics: UA-26048593-1
     twitter_handle: jqno
     twitter_follow: true
     
