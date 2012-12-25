@@ -6,19 +6,28 @@
         <header>
             <h1 class="entry-title">{{ page.title }}</h1>
             <p class="post-meta">
-                <span class="post-date">{{ page.date }}&nbsp;{{ page.time }}</span>
-                {% if page.author %}<span class="post-author">by {{ page.author }}</span>{% endif %}
-                {% if page.tags %}
-                    &mdash;
-                    <span class="post-tags">
-                        {% for tag in page.tags %}
-                        <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-                        {% endfor %}
-                    </span>
-                {% endif %}
+                <span class="post-date">{{ page.date }}</span>
+                <span class="post-author">by {{ site.author }}</span>
             </p>
         </header>
         {{ content|raw }}
+        <footer>
+          <p class="meta">
+              Posted by <span class="author">{{ site.author }}</span>
+              &mdash;
+              <span class="date">{{ page.date }}&nbsp;{{ page.time }}</span>
+              &mdash;
+              {% if page.tags %}
+                  <span class="post-tags">
+                      {% for tag in page.tags %}
+                      <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                      {% endfor %}
+                  </span>
+              {% endif %}
+          </p>
+          <div class="sharing">
+          </div>
+        </footer>
     </article>
     <section>
         <h1>Comments</h1>
