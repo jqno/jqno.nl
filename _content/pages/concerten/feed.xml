@@ -2,5 +2,5 @@
 layout: none
 format: none
 ---
-{% set blog = concerten %}
-{% include 'feed.xml' %}
+{% import "feed.xml" as feed %}
+{{ feed.rss(site, concerten) }}

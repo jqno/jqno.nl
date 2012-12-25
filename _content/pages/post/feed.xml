@@ -2,5 +2,5 @@
 layout: none
 format: none
 ---
-{% set blog = post %}
-{% include 'feed.xml' %}
+{% import "feed.xml" as feed %}
+{{ feed.rss(site, post) }}
