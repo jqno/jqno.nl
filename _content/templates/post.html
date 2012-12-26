@@ -18,6 +18,12 @@
               &mdash;
               <span class="date">{{ page.date }}&nbsp;{{ page.time }}</span>
               &mdash;
+              {% if page.category %}
+                  <span class="post-category">
+                    at <a href="{{ pccaturl(page.category) }}">{{ page.category }}</a>
+                  </span>
+              {% endif %}
+              &mdash;
               {% if page.tags %}
                   <span class="post-tags">
                       {% for tag in page.tags %}

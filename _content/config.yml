@@ -3,7 +3,9 @@ site:
     description: hola!
     author: Anonymous
     pretty_urls: true
-    blogs: [ post, concerten ]
+    blogs: [ post, concerts ]
+    tag_url: tags/%tag%
+    category_url: at/%category%
     analytics: UA-26048593-1
     twitter_handle: jqno
     twitter_follow: true
