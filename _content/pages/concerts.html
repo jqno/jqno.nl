@@ -13,17 +13,6 @@ blog: concerts
       {% if not loop.first %}<br>{% endif %}
       <h2>{{ year }}</h2>
     {% endif %}
-    <header class="list">
-      <p class="meta">
-        <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
-        &mdash;
-        <span class="post-date">
-          {{ post.date|date("D, d F Y") }}
-          {% if post.category %}
-            , at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a>
-          {% endif %}
-        </span>
-      </p>
-    </header>
+    {% include "partial_concert.html" %}
   {% endfor %}
 </article>

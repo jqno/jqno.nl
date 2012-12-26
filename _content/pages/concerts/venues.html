@@ -9,19 +9,7 @@ blog: concerts
   {% for cat in concerts.categories %}
     <h2>{{ cat }}</h2>
     {% for post in concerts.posts if post.category == cat %}
-      <header class="list">
-        <p class="meta">
-          <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
-          &mdash;
-          <span class="post-date">
-            {{ post.date|date("D, d F Y") }}
-            {% if post.category %}
-              , at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a>
-            {% endif %}
-            {% if not loop.last %}<br>{% endif %}
-          </span>
-        </p>
-      </header>
+      {% include "partial_concert.html" %}
     {% endfor %}
     <br>
   {% endfor %}
