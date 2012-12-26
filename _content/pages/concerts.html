@@ -4,11 +4,17 @@ layout: blog
 format: none
 blog: concerts
 ---
-
+{% set year = -1 %}
 <article>
-  <header>
-    <p class="meta">
-      {% for post in concerts.posts %}
+  <h1>Concerts by date</h1>
+  {% for post in concerts.posts %}
+    {% if post.date|date("Y") != year %}
+      {% set year = post.date|date("Y") %}
+      {% if not loop.first %}<br>{% endif %}
+      <h2>{{ year }}</h2>
+    {% endif %}
+    <header class="list">
+      <p class="meta">
         <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
         &mdash;
         <span class="post-date">
@@ -16,9 +22,8 @@ blog: concerts
           {% if post.category %}
             , at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a>
           {% endif %}
-          {% if not loop.last %}<br>{% endif %}
         </span>
-      {% endfor %}
-    </p>
-  </header>
+      </p>
+    </header>
+  {% endfor %}
 </article>

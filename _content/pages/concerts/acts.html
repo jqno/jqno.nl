@@ -1,0 +1,28 @@
+---
+title: Concerts by act
+layout: blog
+format: none
+blog: concerts
+---
+<article>
+  <h1>Concerts by act</h1>
+  {% for tag in concerts.tags %}
+    <h2>{{ tag }}</h2>
+    {% for post in concerts.posts if tag in post.tags %}
+      <header class="list">
+        <p class="meta">
+          <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
+          &mdash;
+          <span class="post-date">
+            {{ post.date|date("D, d F Y") }}
+            {% if post.category %}
+              , at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a>
+            {% endif %}
+          </span>
+        </p>
+      </header>
+    {% endfor %}
+    <br>
+  {% endfor %}
+</article>
+

@@ -985,6 +985,10 @@ article {
     padding-top: 1em
 }
 
+article header.list {
+    margin-bottom: 0
+}
+
 article header {
     position: relative;
     padding-top: 2em;
@@ -994,6 +998,10 @@ article header {
 }
 
 @media only screen and (min-width: 768px) {
+    article header.list {
+        margin-bottom: 0
+    }
+
     article header {
         margin-bottom: 1.5em;
         padding-bottom: 1em;
@@ -1014,7 +1022,8 @@ article header p {
 
 article header p.meta {
     position: absolute;
-    top: 0
+    top: 0;
+    width: 100%
 }
 
 article header time {
