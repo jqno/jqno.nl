@@ -1,12 +1,24 @@
 ---
-title:
+title: Concerts
 layout: blog
 format: none
 blog: concerts
 ---
+<article>
+  <h1>Concerts at {{ category }}</h1>
+  {% for post in pagination.posts %}
+    <header class="list">
+      <p class="meta">
+        <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
+        &mdash;
+        <span class="post-date">
+          {{ post.date|date("D, d F Y") }}
+          {% if post.category %}
+            , at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a>
+          {% endif %}
+        </span>
+      </p>
+    </header>
+  {% endfor %}
+</article>
 
-Posts in category '{{ category }}'
-
-{% for post in pagination.posts %}
-{% include 'partial_post.html' %}
-{% endfor %}
