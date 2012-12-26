@@ -1,3 +1,11 @@
+{% macro url(blog, post_url) %}
+  {% if blog == "post" %}
+  <link type="application/rss+xml" rel="alternate" href="{{ post_url }}"/>
+  {% elseif blog is not empty %}
+  <link type="application/rss+xml" rel="alternate" href="{{ pcurl(blog ~ '/feed.xml') }}"/>
+  {% endif %}
+{% endmacro %}
+
 {% macro rss(site, blog) %}
 <?xml version="1.0" encoding="UTF-8"?>
 <rss

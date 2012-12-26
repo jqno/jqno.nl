@@ -9,7 +9,10 @@ site:
     analytics: UA-26048593-1
     twitter_handle: jqno
     twitter_follow: true
-    
+
+post:
+    feed_url: http://feeds.feedburner.com/trouwens
+
 smartypants:
     enable: true
 

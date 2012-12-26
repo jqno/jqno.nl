@@ -2,5 +2,5 @@
 layout: none
 format: none
 ---
-{% import "feed.xml" as feed %}
+{% import "macros_feed.xml" as feed %}
 {{ feed.rss(site, post) }}
