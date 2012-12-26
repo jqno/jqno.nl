@@ -1,7 +1,7 @@
 site:
     title: Website Title
     description: hola!
-    author: Anonymous
+    author: Jan Ouwens
     pretty_urls: true
     blogs: [ post, concerts ]
     tag_url: tags/%tag%
