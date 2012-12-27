@@ -1,0 +1,12 @@
+<header class="list">
+  <p class="meta">
+    <span class="post-date">{{ post.date|date("D, d F Y") }}</span>
+    &mdash;
+    <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
+    {% if post.category %}
+    <span class="post-date">at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a></span>
+    {% endif %}
+    </span>
+  </p>
+</header>
+

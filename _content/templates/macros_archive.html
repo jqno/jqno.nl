@@ -1,0 +1,14 @@
+{% macro list(title, blog) %}
+  {% set year = -1 %}
+  <article>
+    <h1>{{ title }}</h1>
+    {% for post in blog.posts %}
+      {% if post.date|date("Y") != year %}
+        {% set year = post.date|date("Y") %}
+        {% if not loop.first %}<br>{% endif %}
+        <h2>{{ year }}</h2>
+      {% endif %}
+      {% include "partial_list.html" %}
+    {% endfor %}
+  </article>
+{% endmacro %}

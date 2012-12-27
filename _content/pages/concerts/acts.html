@@ -9,7 +9,7 @@ blog: concerts
   {% for tag in concerts.tags %}
     <h2>{{ tag }}</h2>
     {% for post in concerts.posts if tag in post.tags %}
-      {% include "partial_concert.html" %}
+      {% include "partial_list.html" %}
     {% endfor %}
     <br>
   {% endfor %}

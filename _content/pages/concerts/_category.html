@@ -7,7 +7,7 @@ blog: concerts
 <article>
   <h1>Concerts at {{ category }}</h1>
   {% for post in pagination.posts %}
-    {% include "partial_concert.html" %}
+    {% include "partial_list.html" %}
   {% endfor %}
 </article>
 
