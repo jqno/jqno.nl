@@ -1,7 +1,10 @@
 ---
-title: 
+title: My new blog
+layout: blog
+format: none
+blog: post
 ---
 
-## Hello
-
-I'll be writing some stuff here, very very soon...
+{% for post in pagination.posts %}
+{% include 'partial_post.html' %}
+{% endfor %}

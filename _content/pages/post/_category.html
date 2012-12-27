@@ -5,7 +5,9 @@ format: none
 blog: post
 ---
 
-Posts in category '{{ category }}'
+<article>
+<h1>Posts in category '{{ category }}'</h1>
+</artcile>
 
 {% for post in pagination.posts %}
 {% include 'partial_post.html' %}

@@ -5,7 +5,9 @@ format: none
 blog: post
 ---
 
-Posts tagged with '{{ tag }}'
+<article>
+<h1>Posts tagged with '{{ tag }}'</h1>
+</article>
 
 {% for post in pagination.posts %}
 {% include 'partial_post.html' %}
