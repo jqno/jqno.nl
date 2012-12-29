@@ -1,0 +1,30 @@
+{% if page.blog == "concerts" %}
+  {% set current_blog = concerts %}
+{% else %}
+  {% set current_blog = post %}
+{% endif %}
+
+{% macro cloud(collection, lower_threshold, upper_threshold) %}
+  {% for tag in collection %}
+    {% set c = tag.post_count %}
+    {% if c < lower_threshold %}
+      {% set element = "small" %}
+    {% elseif c < upper_threshold %}
+      {% set element = "span" %}
+    {% else %}
+      {% set element = "big" %}
+    {% endif %}
+    <{{ element }}>
+    <a href="{{ pctagurl(tag) }}">{{ tag }} ({{ c }})</a>
+    </{{ element }}>
+  {% endfor %}
+{% endmacro %}
+
+<section>
+  <h1>Tags</h1>
+  {% import _self as s %}
+  {{ s.cloud(current_blog.tags, current_blog.tagcloud_lower, current_blog.tagcloud_upper) }}
+</section>
+<section>
+  {{ s.cloud(current_blog.categories, current_blog.catcloud_lower, current_blog.catcloud_upper) }}
+</section>
