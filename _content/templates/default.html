@@ -4,27 +4,27 @@
 <body>
   <header role="banner">{% include "header.html" %}</header>
   <nav role="navigation">{% include "nav_" ~ page.blog ~ ".html" %}</nav>
-      <div id="main">
-        <div id="content">
-            <div class="blog-index">
-                {% block content %}
-                <article>
-                    {{ content|raw }}
-                </article>
-                {% endblock %}
-            </div>
-            <aside class="sidebar">
-                {% include "sidebar_tagcloud.html" %}
-                {% include "sidebar_twitter.html" %}
-            </aside>
-        </div>
-    </div>
-    <footer role="contentinfo">
-        {% block footer %}
-        <p>{{ piecrust.branding|raw }}</p>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+        {% block content %}
+          <article>
+            {{ content|raw }}
+          </article>
         {% endblock %}
-    </footer>
-    {{ piecrust.debug_info|raw }}
+      </div>
+      <aside class="sidebar">
+        {% include "sidebar_tagcloud.html" %}
+        {% include "sidebar_twitter.html" %}
+      </aside>
+    </div>
+  </div>
+  <footer role="contentinfo">
+    {% block footer %}
+      <p>{{ piecrust.branding|raw }}</p>
+    {% endblock %}
+  </footer>
+  {{ piecrust.debug_info|raw }}
   {{ google.analytics(site.analytics) }}
 </body>
 </html>
