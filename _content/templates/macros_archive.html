@@ -1,6 +1,6 @@
 {% macro list(title, blog) %}
   {% set year = -1 %}
-  <article>
+  <article class="list">
     <h1>{{ title }}</h1>
     {% for post in blog.posts %}
       {% if post.date|date("Y") != year %}
