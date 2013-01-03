@@ -5,13 +5,15 @@ format: none
 blog: concerts
 ---
 <article>
-  <h1>Concerts by venue</h1>
-  {% for cat in concerts.categories %}
-    <h2>{{ cat }}</h2>
-    {% for post in concerts.posts if post.category == cat %}
-      {% include "partial_list.html" %}
+  <header>
+    <h1>Concerts by venue</h1>
+  </header>
+  <div id="blog-archives">
+    {% for cat in concerts.categories %}
+      <h1>{{ cat }}</h1>
+      {% for post in concerts.posts if post.category == cat %}
+        {% include "partial_list.html" %}
+      {% endfor %}
     {% endfor %}
-    <br>
-  {% endfor %}
+  </div>
 </article>
-

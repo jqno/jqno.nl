@@ -1,13 +1,20 @@
-<header>
-  <p class="meta">
+<div>
+  <div id="left">
     <span class="bull">&bull;</span>
     <span class="post-date">{{ post.date|date("D, d F Y") }}</span>
-    &raquo;&nbsp;&nbsp;
+    &raquo;
+  </div>
+  <div id="right">
     <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
     {% if post.category %}
-    <span class="post-date">at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a></span>
+      <span class="post-date">at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a></span>
+    {% else %}
+      <span class="post-date">in
+        {% for tag in post.tags %}
+          <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </span>
     {% endif %}
-    </span>
-  </p>
-</header>
+  </div>
+</div>
 

@@ -5,13 +5,15 @@ format: none
 blog: concerts
 ---
 <article>
-  <h1>Concerts by act</h1>
-  {% for tag in concerts.tags %}
-    <h2>{{ tag }}</h2>
-    {% for post in concerts.posts if tag in post.tags %}
-      {% include "partial_list.html" %}
+  <header>
+    <h1>Concerts by act</h1>
+  </header>
+  <div id="blog-archives">
+    {% for tag in concerts.tags %}
+      <h1>{{ tag }}</h1>
+      {% for post in concerts.posts if tag in post.tags %}
+        {% include "partial_list.html" %}
+      {% endfor %}
     {% endfor %}
-    <br>
-  {% endfor %}
+  </div>
 </article>
-

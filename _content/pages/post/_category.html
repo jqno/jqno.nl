@@ -4,11 +4,13 @@ layout: blog
 format: none
 blog: post
 ---
-
-<article>
-<h1>Posts in category '{{ category }}'</h1>
-</artcile>
-
-{% for post in pagination.posts %}
-{% include 'partial_post.html' %}
-{% endfor %}
+<article role="article">
+  <header>
+    <h1>Posts in category '{{ category }}'</h1>
+  </header>
+  <div id="blog-archives">
+    {% for post in pagination.posts %}
+      {% include 'partial_list.html' %}
+    {% endfor %}
+  </div>
+</article>
