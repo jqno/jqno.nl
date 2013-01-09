@@ -2,10 +2,10 @@
 title: Howto: Release your Scala Android app to the Market
 tags: [ android, code, howto, scala ]
 ---
-This post is a follow-up to my previous one, [Howto: Android development in
-Scala](http://blog.jqno.nl/tutorial-android-development-in-scala). I'm sure it
-has inspired you to write an awesome Android app in Scala. In this post, I'll
-explain how to release your app to the Android Market.
+This post is a follow-up to my previous one,
+[Howto: Android development in Scala]({{ pcposturl(2011, 10, 16, "howto-android-development-in-scala") }}).
+I'm sure it has inspired you to write an awesome Android app in Scala. In this
+post, I'll explain how to release your app to the Android Market.
 
 Generate a key
 --------------
@@ -26,8 +26,8 @@ to name it differently, SBT will not be able to sign your app!
 Also, remember the alias that you choose on the command-line. You'll need it in
 the next section.
 
-For more information about keys and signing, see the [Android Developers
-site](http://developer.android.com/guide/publishing/app-signing.html).
+For more information about keys and signing, see the
+[Android Developers site](http://developer.android.com/guide/publishing/app-signing.html).
 
 Update your build script
 ------------------------
@@ -87,8 +87,8 @@ So, your app has been on the Market for some time, and you're ready to release
 version 2. Awesome! Here's how you do it.
 
 * Write version 2, obviously.
-* Next, you should enable [automatic manifest
-  generation](https://github.com/jberkel/android-plugin/wiki/android-manifest-generation)
+* Next, you should enable
+  [automatic manifest generation](https://github.com/jberkel/android-plugin/wiki/android-manifest-generation)
   if you haven't done so already: 
     * Remove the android:version and android:versionCode attributes from your
       AndroidManifest.xml
