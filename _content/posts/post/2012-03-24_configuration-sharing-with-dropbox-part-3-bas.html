@@ -1,0 +1,58 @@
+---
+title: Configuration sharing with Dropbox, Part 3: Bash
+tags: [ bash, configuration, dropbox, howto ]
+---
+Introduction
+------------
+
+In this article, I will explain how you can easily share shell scripts between
+your workstations. Some of these scripts, such as convenient aliases or a [git
+color prompt
+script](/howto-display-the-current-git-branch-in-your), have
+to be run each time you start your shell; others only have to be accessible
+from the PATH. Both cases are covered by this trick.
+
+But first, you should read [Part
+0](/configuration-sharing-with-dropbox-part-0-int), if you
+haven't done so already.
+
+One-time set-up
+---------------
+
+* Create a folder called `bash` inside your `~/Dropbox/config`.
+* Create two subfolders: `scripts` and `session`.<br>`scripts` will contain the
+  scripts that need to be on the PATH; `session` will contain the scripts that
+  have to run each time you open up a terminal.
+* Create the `run.sh` file in `~/Dropbox/config/bash`. (Indeed; it shouldn't be
+  in `scripts` or `session`!) Make it executable. Its contents should be as
+  follows:
+
+<pre class="prettyprint language-bsh"># Add the following line to ~/.bashrc:
+# . /path/to/this/script/run.sh script_folder
+# For example:
+# . ~/Dropbox/config/bash/run.sh session
+# Don't forget the dot!
+
+for f in `dirname ${BASH_SOURCE[0]}`/$1/*; do
+  . $f
+done
+</pre>
+
+  This file will iterate over all the files in the given directory; in this case, `~/Dropbox/config/bash/session/*`, and execute them.
+
+* Finally, create a file called `add-scripts-to-path.sh` in the
+  `~/Dropbox/config/bash/session` folder. Again, don't forget to make it
+  executable. It should contain the following one-liner:
+    <pre>
+    export PATH=$PATH:\`dirname ${BASH_SOURCE[0]}\`/../scripts
+    </pre>
+  ... which is how `~/Dropbox/config/bash/scripts/` ends up on the PATH. 
+
+Per computer set-up
+-------------------
+
+On each computer, you need to add the following line to the end of your
+`~/.bashrc` to make it all work:
+<pre>. ~/Dropbox/config/bash/run.sh session</pre>
+Don't forget the dot! It won't work without it.  And that's all!
+
