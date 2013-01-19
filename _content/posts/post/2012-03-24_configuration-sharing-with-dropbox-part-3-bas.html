@@ -20,7 +20,8 @@ One-time set-up
   in `scripts` or `session`!) Make it executable. Its contents should be as
   follows:
 
-<pre class="prettyprint language-bsh"># Add the following line to ~/.bashrc:
+<pre class="prettyprint language-bash">
+# Add the following line to ~/.bashrc:
 # . /path/to/this/script/run.sh script_folder
 # For example:
 # . ~/Dropbox/config/bash/run.sh session
@@ -36,7 +37,7 @@ done
 * Finally, create a file called `add-scripts-to-path.sh` in the
   `~/Dropbox/config/bash/session` folder. Again, don't forget to make it
   executable. It should contain the following one-liner:
-    <pre>
+    <pre class="prettyprint language-bash">
     export PATH=$PATH:\`dirname ${BASH_SOURCE[0]}\`/../scripts
     </pre>
   ... which is how `~/Dropbox/config/bash/scripts/` ends up on the PATH. 
@@ -46,6 +47,6 @@ Per computer set-up
 
 On each computer, you need to add the following line to the end of your
 `~/.bashrc` to make it all work:
-<pre>. ~/Dropbox/config/bash/run.sh session</pre>
+<pre class="prettyprint language-bash">. ~/Dropbox/config/bash/run.sh session</pre>
 Don't forget the dot! It won't work without it.  And that's all!
 
