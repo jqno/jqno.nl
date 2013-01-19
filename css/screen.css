@@ -1306,7 +1306,7 @@ html .gist .gist-file .gist-syntax {
 }
 
 html .gist .gist-file .gist-syntax .gist-highlight {
-    background: #002b36 !important
+    background: #93a1a1 !important
 }
 
 html .gist .gist-file .gist-meta {
@@ -1328,7 +1328,7 @@ html .gist .gist-file .gist-meta a:hover {
 }
 
 html .gist .gist-file .gist-meta a:hover {
-    color: #93a1a1 !important
+    color: #002b36 !important
 }
 
 html .gist .gist-file .gist-meta a[href*='#file'] {
@@ -1348,7 +1348,7 @@ html .gist .gist-file .gist-meta a[href*=raw] {
 }
 
 pre {
-    background: #002b36 url('/images/noise.png?1346949399') top left;
+    background: #93a1a1 url('/images/noise.png?1346949399') top left;
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -1358,8 +1358,8 @@ pre {
     line-height: 1.45em;
     font-size: 13px;
     margin-bottom: 2.1em;
-    padding: .8em 1em;
-    color: #93a1a1;
+    padding: .8em 1em !important;
+    color: #002b36;
     overflow: auto
 }
 
@@ -1403,30 +1403,30 @@ p pre code,li pre code {
     padding: .8em !important;
     overflow-x: auto;
     line-height: 1.45em;
-    background: #002b36 url('/images/noise.png?1346949399') top left !important;
-    color: #93a1a1 !important
+    background: #93a1a1 url('/images/noise.png?1346949399') top left !important;
+    color: #002b36 !important
 }
 
 .pre-code *::-moz-selection,html .gist .gist-file .gist-syntax .gist-highlight pre *::-moz-selection,.highlight code *::-moz-selection {
     background: #386774;
     color: inherit;
-    text-shadow: #002b36 0 1px
+    text-shadow: #93a1a1 0 1px
 }
 
 .pre-code *::-webkit-selection,html .gist .gist-file .gist-syntax .gist-highlight pre *::-webkit-selection,.highlight code *::-webkit-selection {
     background: #386774;
     color: inherit;
-    text-shadow: #002b36 0 1px
+    text-shadow: #93a1a1 0 1px
 }
 
 .pre-code *::selection,html .gist .gist-file .gist-syntax .gist-highlight pre *::selection,.highlight code *::selection {
     background: #386774;
     color: inherit;
-    text-shadow: #002b36 0 1px
+    text-shadow: #93a1a1 0 1px
 }
 
 .pre-code span,html .gist .gist-file .gist-syntax .gist-highlight pre span,.highlight code span {
-    color: #93a1a1 !important
+    color: #002b36 !important
 }
 
 .pre-code span,html .gist .gist-file .gist-syntax .gist-highlight pre span,.highlight code span {
@@ -1470,12 +1470,12 @@ p pre code,li pre code {
 }
 
 .pre-code .o,html .gist .gist-file .gist-syntax .gist-highlight pre .o,.highlight code .o {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     font-weight: bold !important
 }
 
 .pre-code .p,html .gist .gist-file .gist-syntax .gist-highlight pre .p,.highlight code .p {
-    color: #93a1a1 !important
+    color: #002b36 !important
 }
 
 .pre-code .ow,html .gist .gist-file .gist-syntax .gist-highlight pre .ow,.highlight code .ow {
@@ -1484,19 +1484,19 @@ p pre code,li pre code {
 }
 
 .pre-code .gd,html .gist .gist-file .gist-syntax .gist-highlight pre .gd,.highlight code .gd {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     background-color: #372c34 !important;
     display: inline-block
 }
 
 .pre-code .gd .x,html .gist .gist-file .gist-syntax .gist-highlight pre .gd .x,.highlight code .gd .x {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     background-color: #4d2d33 !important;
     display: inline-block
 }
 
 .pre-code .ge,html .gist .gist-file .gist-syntax .gist-highlight pre .ge,.highlight code .ge {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     font-style: italic !important
 }
 
@@ -1505,19 +1505,19 @@ p pre code,li pre code {
 }
 
 .pre-code .gi,html .gist .gist-file .gist-syntax .gist-highlight pre .gi,.highlight code .gi {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     background-color: #1a412b !important;
     display: inline-block
 }
 
 .pre-code .gi .x,html .gist .gist-file .gist-syntax .gist-highlight pre .gi .x,.highlight code .gi .x {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     background-color: #355720 !important;
     display: inline-block
 }
 
 .pre-code .gs,html .gist .gist-file .gist-syntax .gist-highlight pre .gs,.highlight code .gs {
-    color: #93a1a1 !important;
+    color: #002b36 !important;
     font-weight: bold !important
 }
 
@@ -1658,7 +1658,7 @@ p pre code,li pre code {
 
 .highlight,.gist-highlight {
     margin-bottom: 1.8em;
-    background: #002b36;
+    background: #93a1a1;
     overflow-y: hidden;
     overflow-x: auto
 }
