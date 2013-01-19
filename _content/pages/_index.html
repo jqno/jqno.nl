@@ -7,3 +7,14 @@ blog: post
 {% for post in pagination.posts %}
 {% include 'partial_post.html' %}
 {% endfor %}
+
+<article>
+  <div id="navigation">
+    {% if pagination.prev_page %}
+      &laquo;&nbsp;<a href="{{ pcurl(pagination.prev_page) }}" id="navigation-next">Newer Entries</a>
+    {% endif %}
+    {% if pagination.next_page %}
+      <a href="{{ pcurl(pagination.next_page) }}" id="navigation-next">Older Entries</a>&nbsp;&raquo;
+    {% endif %}
+  </div>
+</article>
