@@ -5,19 +5,19 @@
 {% endif %}
 
 {% macro cloud(collection, lower_threshold, upper_threshold) %}
+  <div style="text-align: justify">
   {% for tag in collection %}
     {% set c = tag.post_count %}
     {% if c < lower_threshold %}
-      {% set element = "small" %}
+      {% set element = "80%" %}
     {% elseif c < upper_threshold %}
-      {% set element = "span" %}
+      {% set element = "100%" %}
     {% else %}
-      {% set element = "big" %}
+      {% set element = "130%" %}
     {% endif %}
-    <{{ element }}>
-    <a href="{{ pctagurl(tag) }}">{{ tag }} ({{ c }})</a>
-    </{{ element }}>
+    <span style="font-size: {{element}}"><a href="{{ pctagurl(tag) }}">{{ tag }}</a></span>&nbsp;({{ c }})
   {% endfor %}
+  </div>
 {% endmacro %}
 
 <section>
