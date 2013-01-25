@@ -41,7 +41,12 @@
     </article>
     <section>
         <h1>Comments</h1>
-        {{ disqus.commentthread("jqno") }}
+        {% if page.disqus_id %}
+          {% set disqus_id = page.disqus_id %}
+        {% else %}
+          {% set disqus_id = page.slug %}
+        {% endif %}
+        {{ disqus.commentthread("jqno", disqus_id, page.url) }}
     </section>
 
     <script>prettyPrint();</script>
