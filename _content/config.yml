@@ -1,6 +1,6 @@
 site:
-    title: Website Title
-    description: hola!
+    title: trouwens
+    description: by the way: things I want to say
     author: Jan Ouwens
     pretty_urls: true
     blogs: [ post, concerts ]
