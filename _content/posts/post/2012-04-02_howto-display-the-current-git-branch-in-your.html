@@ -66,11 +66,15 @@ function _fancy_prompt {
     PROMPT=$PROMPT$YELLOW
 
     # Merging
-    if [[ $GIT_STATUS =~ 'Unmerged paths' ]]
+    echo $GIT_STATUS | grep "Unmerged paths" > /dev/null 2>&1
+    if [ "$?" -eq "0" ]
     then
       PROMPT=$PROMPT"|MERGING"
+    fi
+
     # Dirty flag
-    elif [[ $GIT_STATUS =~ 'nothing to commit (working directory clean)' ]]
+    echo $GIT_STATUS | grep "nothing to commit" > /dev/null 2>&1
+    if [ "$?" -eq 0 ]
     then
       PROMPT=$PROMPT
     else
@@ -78,7 +82,8 @@ function _fancy_prompt {
     fi
 
     # Warning for no email setting
-    if [[ $(git config user.email) =~ ^$ ]]
+    git config user.email | grep @ > /dev/null 2>&1
+    if [ "$?" -ne 0 ]
     then
       PROMPT=$PROMPT" !!! NO EMAIL SET !!!"
     fi
