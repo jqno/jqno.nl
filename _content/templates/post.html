@@ -17,14 +17,14 @@
               Posted by <span class="author">{{ site.author }}</span>
               &mdash;
               <span class="date">{{ page.date }}&nbsp;{{ page.time }}</span>
-              &mdash;
               {% if page.category %}
+                  &mdash;
                   <span class="post-category">
                     at <a href="{{ pccaturl(page.category) }}">{{ page.category }}</a>
                   </span>
               {% endif %}
-              &mdash;
               {% if page.tags %}
+                  &mdash;
                   <span class="post-tags">
                       {% for tag in page.tags %}
                       <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
