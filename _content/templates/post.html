@@ -1,6 +1,7 @@
 {% extends "default.html" %}
 {% import "macros_social.html" as social %}
 {% import "macros_disqus.html" as disqus %}
+{% import "macros_picasa.html" as picasa %}
 
 {% block content %}
     <article role="article">
@@ -8,9 +9,16 @@
             <h1 class="entry-title">{{ page.title }}</h1>
             <p class="post-meta">
                 <span class="post-date">{{ page.date }}</span>
+                {% if page.category %}
+                <span class="post-category">at {{ page.category }}</span>
+                {% else %}
                 <span class="post-author">by {{ site.author }}</span>
+                {% endif %}
             </p>
         </header>
+        {% if page.picasa_userid %}
+          {{ picasa.slideshow(page.picasa_userid, page.picasa_albumid, page.picasa_authkey) }}
+        {% endif %}
         {{ content|raw }}
         <footer>
           <p class="meta">
