@@ -3,4 +3,4 @@ layout: none
 format: none
 ---
 {% import "macros_feed.xml" as feed %}
-{{ feed.rss(site, concerten) }}
+{{ feed.rss(site, concerts, "Concerts I've visited", "concerts") }}
