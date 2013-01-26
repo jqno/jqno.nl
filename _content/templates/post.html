@@ -1,7 +1,7 @@
 {% extends "default.html" %}
 {% import "macros_social.html" as social %}
 {% import "macros_disqus.html" as disqus %}
-{% import "macros_picasa.html" as picasa %}
+{% import "macros_media.html" as media %}
 
 {% block content %}
     <article role="article">
@@ -16,8 +16,11 @@
                 {% endif %}
             </p>
         </header>
+        {% if page.youtube %}
+          {{ media.youtube(page.youtube) }}
+        {% endif %}
         {% if page.picasa_userid %}
-          {{ picasa.slideshow(page.picasa_userid, page.picasa_albumid, page.picasa_authkey) }}
+          {{ media.picasa(page.picasa_userid, page.picasa_albumid, page.picasa_authkey) }}
         {% endif %}
         {{ content|raw }}
         <footer>
