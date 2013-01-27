@@ -3,6 +3,7 @@ site:
     description: by the way: things I want to say
     author: Jan Ouwens
     pretty_urls: true
+    posts_per_page: 0
     blogs: [ post, concerts ]
     tag_url: tags/%tag%
     category_url: at/%category%
