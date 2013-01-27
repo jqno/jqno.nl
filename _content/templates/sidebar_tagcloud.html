@@ -9,7 +9,7 @@
   {% for tag in collection %}
     {% set c = tag.post_count %}
     {% if c < lower_threshold %}
-      {% set element = "80%" %}
+      {% set element = "70%" %}
     {% elseif c < upper_threshold %}
       {% set element = "100%" %}
     {% else %}
@@ -20,7 +20,7 @@
     {% elseif type == "cat" %}
       {% set url = pccaturl(tag) %}
     {% endif %}
-    <span style="font-size: {{element}}"><a href="{{ url }}">{{ tag }}</a></span>&nbsp;({{ c }})
+    <span style="font-size: {{element}}"><a href="{{ url }}">{{ tag }}</a>&nbsp;({{ c }})</span>
   {% endfor %}
   </div>
 {% endmacro %}

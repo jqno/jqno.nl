@@ -11,15 +11,15 @@ site:
     twitter_follow: true
 
 post:
-    tagcloud_lower: 3
-    tagcloud_upper: 8
+    tagcloud_lower: 2
+    tagcloud_upper: 5
     feed_url: http://feeds.feedburner.com/trouwens
 
 concerts:
     tagcloud_lower: 2
     tagcloud_upper: 5
     catcloud_lower: 2
-    catcloud_upper: 7
+    catcloud_upper: 5
 
 smartypants:
     enable: true
