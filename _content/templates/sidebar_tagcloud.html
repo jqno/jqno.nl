@@ -4,7 +4,7 @@
   {% set current_blog = post %}
 {% endif %}
 
-{% macro cloud(collection, lower_threshold, upper_threshold) %}
+{% macro cloud(type, collection, lower_threshold, upper_threshold) %}
   <div style="text-align: justify">
   {% for tag in collection %}
     {% set c = tag.post_count %}
@@ -15,7 +15,12 @@
     {% else %}
       {% set element = "130%" %}
     {% endif %}
-    <span style="font-size: {{element}}"><a href="{{ pctagurl(tag) }}">{{ tag }}</a></span>&nbsp;({{ c }})
+    {% if type == "tag" %}
+      {% set url = pctagurl(tag) %}
+    {% elseif type == "cat" %}
+      {% set url = pccaturl(tag) %}
+    {% endif %}
+    <span style="font-size: {{element}}"><a href="{{ url }}">{{ tag }}</a></span>&nbsp;({{ c }})
   {% endfor %}
   </div>
 {% endmacro %}
@@ -23,8 +28,8 @@
 <section>
   <h1>Tags</h1>
   {% import _self as s %}
-  {{ s.cloud(current_blog.tags, current_blog.tagcloud_lower, current_blog.tagcloud_upper) }}
+  {{ s.cloud("tag", current_blog.tags, current_blog.tagcloud_lower, current_blog.tagcloud_upper) }}
 </section>
 <section>
-  {{ s.cloud(current_blog.categories, current_blog.catcloud_lower, current_blog.catcloud_upper) }}
+  {{ s.cloud("cat", current_blog.categories, current_blog.catcloud_lower, current_blog.catcloud_upper) }}
 </section>
