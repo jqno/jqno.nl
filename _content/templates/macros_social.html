@@ -7,7 +7,7 @@
 
 {% macro facebook(url) %}
 <div style="float: left; margin-right: 1em;">
-  <iframe src="http://www.facebook.com/plugins/like.php?href='{{ pcurl(url) }}'&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none;overflow:hidden; width:100px; height:35px;" allowTransparency="true"></iframe>
+  <iframe src="http://www.facebook.com/plugins/like.php?href={{ pcurl(url) }}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none;overflow:hidden; width:100px; height:35px;" allowTransparency="true"></iframe>
 </div>
 {% endmacro %}
 
