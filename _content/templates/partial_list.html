@@ -7,15 +7,17 @@
   <div id="right">
     <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
     <br>
-    {% if post.category %}
-      <span class="post-date">at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a></span>
-    {% else %}
-      <span class="post-date">in
-        {% for tag in post.tags %}
-          <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-      </span>
-    {% endif %}
+    <span class="post-meta">
+      {% if post.category %}
+        <span class="post-date">at <a href="{{ pccaturl(post.category) }}">{{ post.category }}</a></span>
+      {% else %}
+        <span class="post-date">in
+          {% for tag in post.tags %}
+            <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </span>
   </div>
 </div>
 

@@ -1025,13 +1025,24 @@ article span.bull {
     color: #000
 }
 
-article #left {
-    float: left;
-    width: 240px
+article #right {
+    margin-left: 40px
 }
 
-article #right {
-    margin-left: 240px
+article #right .post-meta {
+    font-size: 0.8em
+}
+
+@media only screen and (min-width: 992px) {
+    article #left {
+        font-size: 0.85em;
+        float: left;
+        width: 200px
+    }
+
+    article #right {
+        margin-left: 200px
+    }
 }
 
 article .entry-title {
