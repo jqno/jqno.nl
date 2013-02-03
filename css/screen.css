@@ -823,6 +823,10 @@ body>nav fieldset.mobile-nav select {
         color: #25381d
     }
 
+    body>nav .subscribe {
+        float: right
+    }
+
     body>nav li+li {
         border-left: 1px solid #a5c896;
         margin-left: .8em
@@ -863,6 +867,12 @@ body>nav fieldset.mobile-nav select {
     }
 /*}*/
 
+@media only screen and (min-width: 768px) {
+    body>nav .subscribe {
+        margin-right: -20px
+    }
+}
+
 @media only screen and (min-width: 992px) {
     body>nav form {
         width: 215px
@@ -870,6 +880,10 @@ body>nav fieldset.mobile-nav select {
 
     body>nav ul[data-subscription$=email]+form {
         width: 147px
+    }
+    
+    body>nav .subscribe {
+        margin-right: -35px
     }
 }
 
@@ -2256,7 +2270,6 @@ body>header h2 {
     }
 
     body>header h2 {
-        margin: 10px -35px;
         font-family: "PT Sans","Helvetica Neue",Arial,sans-serif;
         font-size: 1.2em;
         color: #bac7da;
@@ -2282,15 +2295,16 @@ body>header h2 {
         font-size: 1.2em
     }
 
-    /*body>header hgroup {
-        padding: 0 0 1em
-    }*/
-	body>header hgroup {
-		text-align:left;
-	}
+    body>header hgroup {
+        text-align: left;
+    }
+
+    body>header h2 {
+        margin-right: -20px
+    }
 }
 
-@media only screen and (min-width: 990px) {
+@media only screen and (min-width: 992px) {
     body>header {
         font-size: 1.1em
     }
@@ -2299,7 +2313,12 @@ body>header h2 {
         width: 227px;
         height: 227px
     }
-	body>header hgroup {
-		text-align:left;
-	}
+
+    body>header hgroup {
+      text-align: left;
+    }
+
+    body>header h2 {
+        margin-right: -35px
+    }
 }
