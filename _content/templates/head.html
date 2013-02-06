@@ -26,6 +26,6 @@
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Oswald:700,400' rel='stylesheet' type='text/css'>
 
-  {{ feed.url(page.blog, post.feed_url) }}
+  <link type="application/rss+xml" rel="alternate" href="{{ feed.url(page.blog, post.feed_url) }}"/>
 </head>
 
