@@ -1,6 +1,7 @@
 ---
 layout: none
 format: none
+pretty_urls: false
 ---
 {% import "macros_feed.xml" as feed %}
 {{ feed.rss(site, concerts, "Concerts I've visited", "concerts") }}
