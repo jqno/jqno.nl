@@ -8,6 +8,7 @@ site:
     tag_url: tags/%tag%
     category_url: at/%category%
     analytics: UA-26048593-1
+    disqus_root: http://www.jqno.nl/
     twitter_handle: jqno
     twitter_follow: true
 

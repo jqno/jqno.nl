@@ -57,7 +57,7 @@
         {% else %}
           {% set disqus_id = page.slug %}
         {% endif %}
-        {{ disqus.commentthread("jqno", disqus_id, page.url) }}
+        {{ disqus.commentthread("jqno", disqus_id, site.disqus_root ~ page.slug) }}
     </section>
 
     <script>prettyPrint();</script>
