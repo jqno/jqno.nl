@@ -1,18 +1,18 @@
 {% macro twitter() %}
-<div style="float: left; margin-right: 1em;">
+<div style="float: left">
   <a href="https://twitter.com/share" class="twitter-share-button" data-via="jqno">Tweet</a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
 {% endmacro %}
 
 {% macro facebook(url) %}
-<div style="float: left; margin-right: 1em;">
+<div style="float: left">
   <iframe src="http://www.facebook.com/plugins/like.php?href={{ pcurl(url) }}&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none;overflow:hidden; width:100px; height:35px;" allowTransparency="true"></iframe>
 </div>
 {% endmacro %}
 
 {% macro googleplus() %}
-<div style="float: left; margin-right: 1em;">
+<div style="float: left">
   <div class="g-plusone" data-size="medium"></div>
   <script type="text/javascript">
     (function() {
