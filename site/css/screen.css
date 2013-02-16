@@ -280,8 +280,6 @@ big {
 blockquote {
     font-style: italic;
     position: relative;
-    font-size: 1.2em;
-    line-height: 1.5em;
     padding-left: 1em;
     border-left: 4px solid rgba(170,170,170,0.5)
 }
