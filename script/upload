@@ -1,0 +1,28 @@
+#!/bin/bash
+HOST="$1"
+USER="$2"
+
+if [ "$HOST" == "" ]
+then
+  echo "Please provide a host name"
+  exit
+fi
+
+if [ "$USER" == "" ]
+then
+  echo "Please provide a user name"
+  exit
+fi
+
+LCD="`dirname ${BASH_SOURCE[0]}`/../site/_counter"
+RCD="/"
+
+lftp -c "set ftp:list-options -a;
+open ftp://$USER@$HOST;
+lcd $LCD;
+cd $RCD;
+mirror --reverse \
+       --delete \
+       --verbose \
+       --exclude-glob assets/ \
+       --exclude-glob briefenleed/"
