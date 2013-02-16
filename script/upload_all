@@ -14,8 +14,8 @@ then
   exit
 fi
 
-LCD="`dirname ${BASH_SOURCE[0]}`/../site/_counter/post"
-RCD="/post"
+LCD="`dirname ${BASH_SOURCE[0]}`/../site/_counter"
+RCD="/"
 
 lftp -c "set ftp:list-options -a;
 open ftp://$USER@$HOST;
