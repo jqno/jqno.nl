@@ -87,7 +87,7 @@ And that's where my test failed: `Precondition: not all objects are equal`. And 
 > `y.equals(z)` returns `true`, then
 > `x.equals(z)` should return `true`.
 
-So there you have it: this equality relation isn't transitive. Therefore, it's not possible to write an `equals()` method that follows Beust's requirement, and still meet the contract. In other words, this challenge was a trick question.
+So there you have it: this equality relation isn't transitive. Therefore, it's not possible to write an `equals()` method that follows Beust's requirement, and still meet the contract. Was the challenge a trick question?
 
 This also explains why I had trouble with my `hashCode()` method: equal objects must always return the same hashCode. So if `one` and `three` are somehow equal, without having anything in common except the link with `two`, then the only possible hashCode is a constant.
 
@@ -119,7 +119,7 @@ Or it replaces the old one with the new one, in which case the order will be rev
 
 The moral of the story: writing a good `equals` method is hard; don't try to make it fancy.
 
-If you want to have a non-transitive equality test, that's fine, but don't abuse `equals()` to achieve that. There are other ways. One of them, as Beust points out in his [follow-up post](http://beust.com/weblog/2013/02/16/answer-to-the-school-challenge/), is to add an `id` field to the `School` class and use that to base `equals()` and `hashCode()` on. Another way could be to simply add another method:
+If you want to have a non-transitive equality test, that's fine, but don't abuse `equals()` to achieve that. There are other ways. One of them, as Beust points out in his [follow-up post](http://beust.com/weblog/2013/02/16/answer-to-the-school-challenge/), is to add an `id` field to the `School` class and use that to base `equals()` and `hashCode()` on. Another way could be to simply add another method to the class:
 
 <pre class="prettyprint">
 public boolean isSameSchoo(School other) {
