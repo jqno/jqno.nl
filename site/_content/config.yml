@@ -12,6 +12,8 @@ site:
     disqus_root: http://www.jqno.nl/
     twitter_handle: jqno
     twitter_follow: true
+    auto_formats:
+        md: markdown
 
 post:
     tagcloud_lower: 2
