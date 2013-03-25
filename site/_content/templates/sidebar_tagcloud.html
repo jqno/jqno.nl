@@ -16,18 +16,18 @@
       {% set element = "130%" %}
     {% endif %}
     {% if type == "tag" %}
-      {% set url = pctagurl(tag) %}
+      {% set url = pctagurl(tag.name) %}
     {% elseif type == "cat" %}
-      {% set url = pccaturl(tag) %}
+      {% set url = pccaturl(tag.name) %}
     {% endif %}
-    <span style="font-size: {{element}}"><a href="{{ url }}">{{ tag }}</a>&nbsp;({{ c }})</span>
+    <span style="font-size: {{ element }}"><a href="{{ url }}">{{ tag }}</a>&nbsp;({{ c }})</span>
   {% endfor %}
   </div>
 {% endmacro %}
 
+{% import _self as s %}
 <section>
   <h1>Tags</h1>
-  {% import _self as s %}
   {{ s.cloud("tag", current_blog.tags, current_blog.tagcloud_lower, current_blog.tagcloud_upper) }}
 </section>
 <section>
