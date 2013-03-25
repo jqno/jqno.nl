@@ -14,8 +14,8 @@ then
   exit
 fi
 
-LCD="`dirname ${BASH_SOURCE[0]}`/../site/_counter/post"
-RCD="/post"
+LCD="`dirname ${BASH_SOURCE[0]}`/../site/_counter/"
+RCD="/"
 
 lftp -c "set ftp:list-options -a;
 open ftp://$USER@$HOST;
@@ -24,5 +24,6 @@ cd $RCD;
 mirror --reverse \
        --delete \
        --verbose \
+       --exclude-glob concerts/ \
        --exclude-glob assets/ \
        --exclude-glob briefenleed/"
