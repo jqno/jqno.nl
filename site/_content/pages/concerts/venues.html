@@ -11,7 +11,7 @@ blog: concerts
   <div id="blog-archives">
     {% for cat in concerts.categories %}
       <h1>{{ cat }}</h1>
-      {% for post in concerts.posts if post.category == cat %}
+      {% for post in cat.posts %}
         {% include "partial_list.html" %}
       {% endfor %}
     {% endfor %}
