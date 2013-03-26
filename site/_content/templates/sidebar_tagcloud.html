@@ -16,9 +16,9 @@
       {% set element = "130%" %}
     {% endif %}
     {% if type == "tag" %}
-      {% set url = pctagurl(tag.name) %}
+      {% set url = pctagurl(tag) %}
     {% elseif type == "cat" %}
-      {% set url = pccaturl(tag.name) %}
+      {% set url = pccaturl(tag) %}
     {% endif %}
     <span style="font-size: {{ element }}"><a href="{{ url }}">{{ tag }}</a>&nbsp;({{ c }})</span>
   {% endfor %}
