@@ -55,13 +55,13 @@ The full solution
 ----
 Now that we have the two-field solution, a more general solution is within reach: we simply have to pretend that the class only has two fields. How do we do that? Simple: we apply the two-field solution separately for each field in the class. We can iterate over the fields, where the current field is the 'first' value, and all other fields together represent the 'second' value. So if the second value changes, all fields (except the current one) change.
 
-Let's say we have a class with four fields, `f`, `g`, `h` and `i`. We'll represent them with A/B, 1/2, α (alpha)/β (beta) and ب (ba)/ج (jim), respectively. Then we have to solve the following cases:
+Let's say we have a class with four fields, `f`, `g`, `h` and `i`. We'll represent them with A/B, 1/2, α (alpha)/β (beta) and ا (alif) /ب (ba), respectively. Then we have to solve the following cases:
 
            fghi     fghi     fghi
-    f:  A1=A1αب  B1=B1αب  B2=B2βج
-    g:  A1=A1αب  B1=A2αب  B2=B2βج
-    h:  A1=A1αب  B1=A1βب  B2=B2βج
-    i:  A1=A1αب  B1=A1αج  B2=B2βج
+    f:  A1=A1αا  B1=B1αا  B2=B2βب
+    g:  A1=A1αا  B1=A2αا  B2=B2βب
+    h:  A1=A1αا  B1=A1βا  B2=B2βب
+    i:  A1=A1αا  B1=A1αب  B2=B2βب
 
 Note how `A1` and `B2` are the same in all cases, and how the "`B`" ripples through the `B1` values in the middle column.
 
