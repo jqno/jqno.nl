@@ -5,61 +5,61 @@
 {% import "macros_media.html" as media %}
 
 {% block content %}
-    <article role="article">
-        <header>
-            <h1 class="entry-title">{{ page.title }}</h1>
-            <p class="post-meta">
-                <span class="post-date">{{ page.date }}</span>
-                {% if page.category %}
-                <span class="post-category">at {{ page.category }}</span>
-                {% else %}
-                <span class="post-author">by {{ site.author }}</span>
-                {% endif %}
-            </p>
-        </header>
-        {% if page.youtube %}
-          {{ media.youtube(page.youtube) }}
-        {% endif %}
-        {% if page.picasa_userid %}
-          {{ media.picasa(page.picasa_userid, page.picasa_albumid, page.picasa_authkey) }}
-        {% endif %}
-        {{ content|raw }}
-        <footer>
-          <p class="meta">
-              Posted by <span class="author">{{ site.author }}</span>
-              &mdash;
-              <span class="date">{{ page.date }}</span>
-              {% if page.category %}
-                  &mdash;
-                  <span class="post-category">
-                    at <a href="{{ pccaturl(page.category) }}">{{ page.category }}</a>
-                  </span>
-              {% endif %}
-              {% if page.tags %}
-                  &mdash;
-                  <span class="post-tags">
-                      {% for tag in page.tags %}
-                      <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-                      {% endfor %}
-                  </span>
-              {% endif %}
-          </p>
-          <div class="sharing">
-            {{ social.twitter() }}
-            {{ social.facebook(page.url) }}
-            {{ social.googleplus() }}
-          </div>
-        </footer>
-    </article>
-    <section>
-        <h1>Comments</h1>
-        {% if page.disqus_id %}
-          {% set disqus_id = page.disqus_id %}
-        {% else %}
-          {% set disqus_id = page.slug %}
-        {% endif %}
-        {{ disqus.commentthread("jqno", disqus_id, site.disqus_root ~ page.slug) }}
-    </section>
+<article role="article">
+  <header>
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <span class="post-date">{{ page.date }}</span>
+      {% if page.category %}
+      <span class="post-category">at {{ page.category }}</span>
+      {% else %}
+      <span class="post-author">by {{ site.author }}</span>
+      {% endif %}
+    </p>
+  </header>
+  {% if page.youtube %}
+    {{ media.youtube(page.youtube) }}
+  {% endif %}
+  {% if page.picasa_userid %}
+    {{ media.picasa(page.picasa_userid, page.picasa_albumid, page.picasa_authkey) }}
+  {% endif %}
+  {{ content|raw }}
+  <footer>
+    <p class="meta">
+      Posted by <span class="author">{{ site.author }}</span>
+      &mdash;
+      <span class="date">{{ page.date }}</span>
+      {% if page.category %}
+        &mdash;
+        <span class="post-category">
+          at <a href="{{ pccaturl(page.category) }}">{{ page.category }}</a>
+        </span>
+      {% endif %}
+      {% if page.tags %}
+        &mdash;
+        <span class="post-tags">
+          {% for tag in page.tags %}
+            <a href="{{ pctagurl(tag) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
+      {% endif %}
+    </p>
+    <div class="sharing">
+      {{ social.twitter() }}
+      {{ social.facebook(page.url) }}
+      {{ social.googleplus() }}
+    </div>
+  </footer>
+</article>
+<section>
+  <h1>Comments</h1>
+  {% if page.disqus_id %}
+    {% set disqus_id = page.disqus_id %}
+  {% else %}
+    {% set disqus_id = page.slug %}
+  {% endif %}
+  {{ disqus.commentthread("jqno", disqus_id, site.disqus_root ~ page.slug) }}
+</section>
 
-    <script>prettyPrint();</script>
+<script>prettyPrint();</script>
 {% endblock %}
