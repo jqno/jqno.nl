@@ -1,5 +1,6 @@
 ---
 title: About this website
+layout: default_mainsite
 ---
 ![Me]({{ assets['jan'] }})
 
