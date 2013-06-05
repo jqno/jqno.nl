@@ -1,11 +1,14 @@
 {% import "macros_google.html" as google %}
 {% import "macros_less.html" as less %}
+
 {% include "head.html" %}
+
 <body>
   <header role="banner">{% include "header.html" %}</header>
   <nav role="navigation">
-    {% include "nav_" ~ page.blog ~ ".html" %}
-    {% include "nav_feed.html" %}
+    {% block navigation %}
+      {{ navigation|raw }}
+    {% endblock %}
   </nav>
   <div id="main">
     <div id="content">
@@ -17,9 +20,9 @@
         {% endblock %}
       </div>
       <aside class="sidebar">
-        {% include "sidebar_about.html" %}
-        {% include "sidebar_tagcloud.html" %}
-        {% include "sidebar_twitter.html" %}
+        {% block sidebar %}
+          {{ sidebar|raw }}
+        {% endblock %}
       </aside>
     </div>
   </div>
