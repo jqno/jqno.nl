@@ -39,5 +39,8 @@
   </footer>
   {{ piecrust.debug_info|raw }}
   {{ google.analytics(site.analytics) }}
+  {% block appendix %}
+    {{ appendix|raw }}
+  {% endblock %}
 </body>
 </html>
