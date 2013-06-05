@@ -1,10 +1,16 @@
 {% import "macros_google.html" as google %}
 {% import "macros_less.html" as less %}
+{% import "macros_identity.html" as identity %}
 
 {% include "head.html" %}
 
 <body>
-  <header role="banner">{% include "header.html" %}</header>
+  <header role="banner">
+    <hgroup>
+      <h1><a href="{{ identity.root(page.layout, site.root) }}">{{ identity.title(page.layout, site.title) }}</a></h1>
+      <h2>{{ identity.description(page.layout, site.description) }}</h2>
+    </hgroup>
+  </header>
   <nav role="navigation">
     {% block navigation %}
       {{ navigation|raw }}
