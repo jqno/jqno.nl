@@ -4,7 +4,7 @@ layout: default_mainsite
 ---
 ![Me]({{ assets['jan'] }})
 
-Hi there! I'm Jan Ouwens, a programmer from the Netherlands. You might know me from my [EqualsVerifier](https://code.google.com/p/equalsverifier/) project, which is a Java tool that you can use to test whether you've implemented `equals` correctly.
+Hi there! I'm Jan Ouwens, a software developer from the Netherlands. You might know me from my [EqualsVerifier]({{ pcurl('equalsverifier') }}) project, which is a Java tool that you can use to test whether you've implemented `equals` correctly.
 
 Currently, I'm using C# to write specialized apps to operate an electron microscope at [Sioux](http://www.sioux.eu). Before that, I've done some super-secret stuff at Philips, and I've written web apps in Java for [TOPdesk](http://www.topdesk.com). In my free time, I like to dabble in Scala and Android, among other things. [Here](https://play.google.com/store/apps/developer?id=Jan+Ouwens)'s my app!
 
