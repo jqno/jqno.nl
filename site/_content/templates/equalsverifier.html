@@ -1,0 +1,38 @@
+{% extends "default.html" %}
+
+{% block navigation %}
+{% include "nav_equalsverifier.html" %}
+{% include "nav_feed.html" %}
+{% endblock %}
+
+{% block content %}
+<article role="article">
+  <header>
+    <h1 class="entry-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <span class="post-date">{{ page.datum|date("j F Y") }}</span>
+      <span class="post-author">by {{ site.author }}</span>
+    </p>
+  </header>
+  {{ content|raw }}
+  <footer>
+    <p class="meta">
+      Posted by <span class="author">{{ site.author }}</span>
+      &mdash;
+      <span class="date">{{ page.datum|date("j F Y") }}</span>
+    </p>
+    <div class="sharing">
+      {{ social.twitter() }}
+      {{ social.facebook(page.url) }}
+      {{ social.googleplus() }}
+    </div>
+  </footer>
+</article>
+<script>prettyPrint();</script>
+{% endblock %}
+
+{% block sidebar %}
+{% include "sidebar_about.html" %}
+{% include "sidebar_twitter.html" %}
+{% endblock %}
+
