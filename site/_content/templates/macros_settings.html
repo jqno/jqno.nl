@@ -1,0 +1,3 @@
+{% macro either(first_choice, second_choice) %}
+{% if first_choice is not empty %}{{ first_choice }}{% else %}{{ second_choice }}{% endif %}
+{% endmacro %}

@@ -1,5 +1,5 @@
-{% macro url(blog, post_url) %}
-{% if blog == "post" %}{{ post_url }}{% elseif blog is not empty %}{{ pcurl(blog ~ '/feed.xml') }}{% endif %}
+{% macro url(blogs, page) %}
+{% if blogs[page.blog].feed_url is not empty %}{{ blogs[page.blog].feed_url }}{% else %}{{ pcurl(page.blog ~ '/feed.xml') }}{% endif %}
 {% endmacro %}
 
 {% macro rss(site, blog, feed_description, name) %}

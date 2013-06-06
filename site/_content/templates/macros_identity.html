@@ -1,5 +1,0 @@
-{% macro title(layout, default) %}{% if layout == "equalsverifier" %}equals verifier{% else %}{{ default }}{% endif %}{% endmacro %}
-
-{% macro description(layout, default) %}{% if layout == "equalsverifier" %}testing equals() and hashCode(){% else %}{{ default }}{% endif %}{% endmacro %}
-
-{% macro root(layout, default) %}{% if layout == "equalsverifier" %}{{ pcurl('equalsverifier') }}{% else %}{{ default }}{% endif %}{% endmacro %}

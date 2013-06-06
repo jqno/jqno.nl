@@ -1,14 +1,14 @@
 {% import "macros_google.html" as google %}
 {% import "macros_less.html" as less %}
-{% import "macros_identity.html" as identity %}
+{% import "macros_settings.html" as settings %}
 
 {% include "head.html" %}
 
 <body>
   <header role="banner">
     <hgroup>
-      <h1><a href="{{ identity.root(page.layout, site.root) }}">{{ identity.title(page.layout, site.title) }}</a></h1>
-      <h2>{{ identity.description(page.layout, site.description) }}</h2>
+      <h1><a href="{% block home_url %}{{ site.root }}{% endblock %}">{{ settings.either(blogs[page.blog].title, site.title) }}</a></h1>
+      <h2>{{ settings.either(blogs[page.blog].description, site.description) }}</h2>
     </hgroup>
   </header>
   <nav role="navigation">
@@ -38,7 +38,7 @@
     {% endblock %}
   </footer>
   {{ piecrust.debug_info|raw }}
-  {{ google.analytics(site.analytics) }}
+  {{ google.analytics(settings.either(blogs[page.blog].analytics, site.analytics)) }}
   {% block appendix %}
     {{ appendix|raw }}
   {% endblock %}

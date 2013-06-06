@@ -5,7 +5,7 @@ site:
     author: Jan Ouwens
     pretty_urls: true
     posts_per_page: 0
-    blogs: [ post, concerts ]
+    blogs: [ post, equalsverifier, concerts ]
     tag_url: tags/%tag%
     category_url: at/%category%
     analytics: UA-26048593-1
@@ -15,16 +15,23 @@ site:
     auto_formats:
         md: markdown
 
-post:
-    tagcloud_lower: 2
-    tagcloud_upper: 5
-    feed_url: http://feeds.feedburner.com/trouwens
+blogs:
+    post:
+        tagcloud_lower: 2
+        tagcloud_upper: 5
+        feed_url: http://feeds.feedburner.com/trouwens
 
-concerts:
-    tagcloud_lower: 2
-    tagcloud_upper: 5
-    catcloud_lower: 2
-    catcloud_upper: 5
+    concerts:
+        tagcloud_lower: 2
+        tagcloud_upper: 5
+        catcloud_lower: 2
+        catcloud_upper: 5
+
+    equalsverifier:
+        title: equals verifier
+        description: testing equals and hashCode
+        analytics: UA-10447367-2
+        feed_url: http://feeds.feedburner.com/trouwens
 
 smartypants:
     enable: true

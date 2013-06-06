@@ -1,12 +1,12 @@
 {% import "macros_feed.xml" as feed %}
-{% import "macros_identity.html" as identity %}
+{% import "macros_settings.html" as settings %}
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>{{ identity.title(page.layout, site.title) }}{% if page.title is not empty %} &mdash; {{ page.title }}{% endif %}</title>
+  <title>{{ settings.either(blogs[page.blog].title, site.title) }}{% if page.title is not empty %} &mdash; {{ page.title }}{% endif %}</title>
   <meta name="author" content="{{ site.author }}">
   <meta name="description" content="{{ site.meta_description }}" />
 
@@ -22,11 +22,11 @@
   <script src="{{ site.root }}js/octopress.js" type="text/javascript"></script>
   <script src="{{ site.root }}js/prettify.js"></script>
   <script src="{{ site.root }}js/lang-scala.js"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
   <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Oswald:700,400' rel='stylesheet' type='text/css'>
 
-  <link type="application/rss+xml" rel="alternate" href="{{ feed.url(page.blog, post.feed_url) }}"/>
+  <link type="application/rss+xml" rel="alternate" href="{{ feed.url(blogs, page) }}"/>
 </head>
 
