@@ -28,7 +28,7 @@ blogs:
         catcloud_upper: 5
 
     equalsverifier:
-        title: equals verifier
+        title: EqualsVerifier
         description: testing equals and hashCode
         analytics: UA-10447367-2
         feed_url: http://feeds.feedburner.com/trouwens
