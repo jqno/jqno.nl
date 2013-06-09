@@ -5,6 +5,17 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.3
+-----------
+_June 9, 2013_
+
+* ...read error messages on the [new EqualsVerifier website](http://www.jqno.nl/equalsverifier/errormessages) at [jqno.nl](http://www.jqno.nl/equalsverifier), which matches EqualsVerifier's fully qualified name: `nl.jqno.equalsverifier`.
+* ...disregard .debug(), as it is deprecated. Relevant exceptions are now included as a cause in the stack trace.
+* ...test "versioned entity" classes where a zero id field indicates that the object is new, by suppressing `Warning.IDENTICAL_COPY_FOR_VERSIONED_ENTITY`. ([Issue 80](https://code.google.com/p/equalsverifier/issues/detail?id=80))
+* ...get more accurate transitivity errors. ([Issue 78](https://code.google.com/p/equalsverifier/issues/detail?id=78))
+* ...stop worrying about exceptions thrown in toString. ([Issue 79](https://code.google.com/p/equalsverifier/issues/detail?id=79))
+* ...stop worrying about adding prefab values for UUID, to avoid that pesky recursion warning. ([Issue 81](https://code.google.com/p/equalsverifier/issues/detail?id=81))
+
 Version 1.2
 -----------
 _March 26, 2013_
