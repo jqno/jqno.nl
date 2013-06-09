@@ -56,14 +56,7 @@ When `EqualsVerifier` detects a problem, it will explain what it thinks is wrong
 
 Need help?
 ----------
-You can...
-
-* ...get [explanations for specific error messages]({{ pcurl('equalsverifier/errormessages') }});
-* ...read the [FAQ]({{ pcurl('equalsverifier/faq') }});
-* ...read the [documentation]({{ pcurl('equalsverifier/documentation') }});
-* ...review the [changelog]({{ pcurl('equalsverifier/changelog') }}).
-* ...ask a question on [the Google Group](https://groups.google.com/forum/?fromgroups#!forum/equalsverifier);
-* ...open [an issue](https://code.google.com/p/equalsverifier/issues/list);
+Please take a look at the [Help page]({{ pcurl('equalsverifier/help') }}).
 
 
 Fork me on GitHub!
