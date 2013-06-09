@@ -2,6 +2,7 @@
 title: Non-nullity: equals/hashCode/toString throws NullPointerExcpetion
 blog: equalsverifier
 layout: equalsverifier
+category: nonnullityequalshashcodetostringthrowsnullpointerexception
 ---
 This error occurs when the class under test can throw a `NullPointerException` when one of its fields is null and `equals`/`hashCode`/`toString` is called. For example, `equals` could contain this line:
 <pre class="prettyprint">

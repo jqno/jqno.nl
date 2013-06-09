@@ -2,6 +2,7 @@
 title: Subclass: equals is not final
 blog: equalsverifier
 layout: equalsverifier
+category: subclassequalsisnotfinal
 ---
     Subclass: equals is not final.
     Supply an instance of a redefined subclass using withRedefinedSubclass if equals cannot be final.

@@ -2,6 +2,7 @@
 title: Symmetry: ... does not equal superclass instance ...
 blog: equalsverifier
 layout: equalsverifier
+category: symmetrydoesnotequalsuperclassinstance
 ---
 Short explanation
 -----------------

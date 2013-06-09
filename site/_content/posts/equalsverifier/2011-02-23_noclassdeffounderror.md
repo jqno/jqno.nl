@@ -2,6 +2,7 @@
 title: NoClassDefFoundError
 blog: equalsverifier
 layout: equalsverifier
+category: noclassdeffounderror
 ---
     java.lang.AssertionError: java.lang.NoClassDefFoundError: net/sf/cglib/asm/FieldVisitor
 

@@ -2,6 +2,7 @@
 title: Subclass: object is not equal to an instance of a trivial subclass with equal fields
 blog: equalsverifier
 layout: equalsverifier
+category: subclassobjectisnotequaltoaninstanceofatrivialsubclasswithequalfields
 ---
     Subclass: object is not equal to an instance of a trivial subclass with equal fields: ...
     Consider making the class final.

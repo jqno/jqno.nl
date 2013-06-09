@@ -2,6 +2,7 @@
 title: Recursive datastructure
 blog: equalsverifier
 layout: equalsverifier
+category: recursivedatastructure
 ---
     Recursive datastructure.
     Add prefab values for one of the following types: com.example.Foo.

@@ -2,6 +2,7 @@
 title: Abstract delegation
 blog: equalsverifier
 layout: equalsverifier
+category: abstractdelegation
 ---
     Abstract delegation: MyClass's equals method delegates to an abstract method
     Abstract delegation: MyClass's hashCode method delegates to an abstract method

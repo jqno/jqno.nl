@@ -2,6 +2,7 @@
 title: ClassCastException: java.lang.Object cannot be cast to ...
 blog: equalsverifier
 layout: equalsverifier
+category: classcastexceptionjavalangobjectcannotbecastto
 ---
 There can be two causes for this error message. First, maybe you really did cast an `Object` to something it's not. Can't find the cast? Call EqualsVerifier with the `.debug()` method to see a full stacktrace.
 

@@ -2,6 +2,7 @@
 title: Precondition: two objects are equal to each other
 blog: equalsverifier
 layout: equalsverifier
+category: preconditiontwoobjectsareequaltoeachother
 ---
 This happens when two instances of the type under test, whose fields have different values, are still equal to each other. This usually happens when none of the type's fields influences the result of the call to `equals`.
 

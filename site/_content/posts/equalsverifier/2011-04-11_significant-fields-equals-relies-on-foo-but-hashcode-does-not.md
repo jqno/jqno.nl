@@ -2,6 +2,7 @@
 title: Significant fields: equals relies on foo, but hashCode does not
 blog: equalsverifier
 layout: equalsverifier
+category: significantfieldsequalsreliesonfoobuthashcodedoesnot
 ---
 The cause for this message is usually the obvious one.
 
