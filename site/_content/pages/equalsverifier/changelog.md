@@ -5,8 +5,8 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
-Version 1.3
------------
+Version 1.3.1
+-------------
 _June 9, 2013_
 
 * ...read error messages on the [new EqualsVerifier website](http://www.jqno.nl/equalsverifier/errormessages) at [jqno.nl](http://www.jqno.nl/equalsverifier), which matches EqualsVerifier's fully qualified name: `nl.jqno.equalsverifier`.
@@ -15,6 +15,12 @@ _June 9, 2013_
 * ...get more accurate transitivity errors. ([Issue 78](https://code.google.com/p/equalsverifier/issues/detail?id=78))
 * ...stop worrying about exceptions thrown in toString. ([Issue 79](https://code.google.com/p/equalsverifier/issues/detail?id=79))
 * ...stop worrying about adding prefab values for UUID, to avoid that pesky recursion warning. ([Issue 81](https://code.google.com/p/equalsverifier/issues/detail?id=81))
+
+Version 1.3
+-----------
+_June 9, 2013_
+
+Please don't use version 1.3; it's a broken release. Use 1.3.1 instead.
 
 Version 1.2
 -----------
