@@ -5,7 +5,7 @@ layout: equalsverifier
 ---
 Quick start
 -----------
-1. Get `EqualsVerifier`.
+1. Get EqualsVerifier.
     * Maven users, add this to your POM:
 
         <pre class="prettyprint">
@@ -21,7 +21,7 @@ Quick start
 
         * [objenesis-1.1.jar](http://code.google.com/p/objenesis/)
         * [cglib-nodep-2.2.jar](http://cglib.sourceforge.net/)
-        * The most recent `EqualsVerifier` jar. You can download it from [maven.org](http://search.maven.org/#search|gav|1|g%3A%22nl.jqno.equalsverifier%22%20AND%20a%3A%22equalsverifier%22).
+        * The most recent EqualsVerifier jar. You can download it from [maven.org](http://search.maven.org/#search|gav|1|g%3A%22nl.jqno.equalsverifier%22%20AND%20a%3A%22equalsverifier%22).
 
 2. Use, as follows, in your unit test:
     <pre class="prettyprint">
@@ -51,7 +51,7 @@ Quick start
     }
     </pre>
 
-When `EqualsVerifier` detects a problem, it will explain what it thinks is wrong. In some cases (mostly when it needs more information), it will say what to do to fix the problem.
+When EqualsVerifier detects a problem, it will explain what it thinks is wrong. In some cases (mostly when it needs more information), it will say what to do to fix the problem.
 
 
 Need help?

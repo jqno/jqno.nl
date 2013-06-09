@@ -48,7 +48,7 @@ public final class School {
 }
 </pre>
 
-I even added a `toString()`! Obviously, I wasn't really happy about the `hashCode()` method, but I wasn't really sure how to write it. Essentially, this implementation will turn your efficient hash collection with O(1) lookup into a list with O(n) lookup. So yeah, that's pretty bad. But at least it meets the contract, so I thought I'd fix that later; first I wanted to see if my `equals()` was correct. So I defined some tests with `EqualsVerifier`:
+I even added a `toString()`! Obviously, I wasn't really happy about the `hashCode()` method, but I wasn't really sure how to write it. Essentially, this implementation will turn your efficient hash collection with O(1) lookup into a list with O(n) lookup. So yeah, that's pretty bad. But at least it meets the contract, so I thought I'd fix that later; first I wanted to see if my `equals()` was correct. So I defined some tests with EqualsVerifier:
 
 <pre class="prettyprint">
 @Test

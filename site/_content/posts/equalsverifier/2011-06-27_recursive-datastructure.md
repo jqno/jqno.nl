@@ -14,7 +14,7 @@ One of the fields in `Foo` is of type `Foo` itself.
 
 One of the fields in `Foo` is of type `Bar`, and one of the fields in `Bar` is of type `Foo`.
 
-EqualsVerifier will recursively try to instantiate objects of every class it encounters, but cannot do so if there is a loop in the object graph. In this case it's necessary to add predefined instances of one of the classes involved in the loop. If `EqualsVerifier` mentions more than one class, it doesn't matter which one you choose, although if one of these classes is the class that you are testing, it is probably better to choose another.
+EqualsVerifier will recursively try to instantiate objects of every class it encounters, but cannot do so if there is a loop in the object graph. In this case it's necessary to add predefined instances of one of the classes involved in the loop. If EqualsVerifier mentions more than one class, it doesn't matter which one you choose, although if one of these classes is the class that you are testing, it is probably better to choose another.
 
 Example:
 

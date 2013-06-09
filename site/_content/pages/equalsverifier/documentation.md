@@ -3,16 +3,16 @@ title: Documentation
 blog: equalsverifier
 layout: equalsverifier
 ---
-`EqualsVerifier` is a Java tool that can be used in unit tests. It verifies whether the contract for the `equals` and `hashCode` methods is met. The contracts are described in the Javadoc comments for the `java.lang.Object` class.
+EqualsVerifier is a Java tool that can be used in unit tests. It verifies whether the contract for the `equals` and `hashCode` methods is met. The contracts are described in the Javadoc comments for the `java.lang.Object` class.
 
 
 Usage
 -----
 Use, within unit test method, as follows:
 
-* Create an instance of `EqualsVerifier`. Either call `#forExamples(Object, Object, Object...)` to supply at least two instances of the class under test that are not equal to one another, or call `#forClass(Class)` to supply a reference to the class itself to let the `EqualsVerifier` instantiate objects.
+* Create an instance of EqualsVerifier. Either call `#forExamples(Object, Object, Object...)` to supply at least two instances of the class under test that are not equal to one another, or call `#forClass(Class)` to supply a reference to the class itself to let the EqualsVerifier instantiate objects.
 * If the class under test is designed for inheritance, and the `equals` and `hashCode` methods can be overridden, an instance of the class is not permitted to be equal to an instance of a subclass, even though all the relevant fields are equal. Call `#withRedefinedSubclass(Class)` to supply a reference to such a subclass, or call `suppress(Warning)` with `Warning.STRICT_INHERITANCE` to disable the check.
-* Call `suppress(Warning)` to suppress warnings given by `EqualsVerifier`.
+* Call `suppress(Warning)` to suppress warnings given by EqualsVerifier.
 * Call `#verify()` to perform the actual verifications.
 
 Example use:
@@ -35,14 +35,14 @@ public void equalsContract() {
 }
 </pre>
 
-When `EqualsVerifier` detects a problem, it will explain what it thinks is wrong. In some cases (mostly when it needs more information), it will say what to do to fix the problem.
+When EqualsVerifier detects a problem, it will explain what it thinks is wrong. In some cases (mostly when it needs more information), it will say what to do to fix the problem.
 
 
 What does it do?
 ----------------
-`EqualsVerifier` checks the following properties:
+EqualsVerifier checks the following properties:
 
-* Preconditions for `EqualsVerifier` itself.
+* Preconditions for EqualsVerifier itself.
 * Reflexivity and symmetry of the `equals` method.
 * Symmetry and transitivity of the `equals` method within an inheritance hierarchy, when applicable.
 * Consistency (by repeatedly calling `equals`).
@@ -59,14 +59,14 @@ Equality and inheritance
 ------------------------
 While a class can define a perfect `equals` method, a subclass can still break this contract, even for its superclass. Therefore, a class should either be final, or the `equals` contract should hold for its subclasses as well. This means that an instance of a class should be equal to an instance of a subclass for which all fields are equal.
 
-Similarly, if `equals` is overridden, it can break the contract. So either should the `equals` method be final, thereby guaranteeing its adherence to the contracts for itself and all its subclasses, or instances of a class that redefines `equals` may never equal instances of its superclass, even when their (shared) state is equal. This should be tested by calling `#withRedefinedSuperclass()` (in the subclass) or `#withRedefinedSubclass(Class)` (in the superclass). `EqualsVerifier` should be used separately on each of the classes in the hierarchy. If necessary, `#withRedefinedSuperclass()` and `#withRedefinedSubclass(Class)` can be combined.
+Similarly, if `equals` is overridden, it can break the contract. So either should the `equals` method be final, thereby guaranteeing its adherence to the contracts for itself and all its subclasses, or instances of a class that redefines `equals` may never equal instances of its superclass, even when their (shared) state is equal. This should be tested by calling `#withRedefinedSuperclass()` (in the subclass) or `#withRedefinedSubclass(Class)` (in the superclass). EqualsVerifier should be used separately on each of the classes in the hierarchy. If necessary, `#withRedefinedSuperclass()` and `#withRedefinedSubclass(Class)` can be combined.
 
-For an example of an implementation of such redefined `equals` methods, see `CanEqualColorPoint` in the `EqualsVerifier`'s unit tests. See Chapter 28 of _Programming in Scala_ (full reference below) for an explanation of how and why this works.
+For an example of an implementation of such redefined `equals` methods, see `CanEqualColorPoint` in the EqualsVerifier's unit tests. See Chapter 28 of _Programming in Scala_ (full reference below) for an explanation of how and why this works.
 
 
 Dependencies
 ------------
-`EqualsVerifier` needs the following libraries:
+EqualsVerifier needs the following libraries:
 
 * [objenesis-1.1.jar](http://code.google.com/p/objenesis/)
 * [cglib-nodep-2.2.jar](http://cglib.sourceforge.net/)
@@ -83,4 +83,4 @@ The verifications are inspired by:
 * _JUnit Recipes_ by J.B. Rainsberger, Manning, 2005: Appendix B.2 (_Strangeness and transitivity_).
 * _How Do I Correctly Implement the equals() Method?_ by Tal Cohen, Dr. Dobb's Journal, May 2002. Read the [article](http://www.ddj.com/java/184405053) and Cohen's [follow-up](http://tal.forum2.org/equals).
 
-And of course GSBase's `EqualsTester` by Mike Bowler, Gargoyle Software, which I think is pretty good, but lacking with respect to inheritance. Also, it requires that examples be given, while `EqualsVerifier` can auto-generate them in most cases (which, of course, is way cool). You can find it on [SourceForge](http://gsbase.sourceforge.net/index.html).
+And of course GSBase's `EqualsTester` by Mike Bowler, Gargoyle Software, which I think is pretty good, but lacking with respect to inheritance. Also, it requires that examples be given, while EqualsVerifier can auto-generate them in most cases (which, of course, is way cool). You can find it on [SourceForge](http://gsbase.sourceforge.net/index.html).
