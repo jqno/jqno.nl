@@ -10,7 +10,7 @@ This week, I got [nerd sniped](http://xkcd.com/356/) by Cedric Beust's latest [c
 > class that satisfy the following requirement: two Schools are identical if
 > they either have the same name or the same nickname.
 
-I wrote [EqualsVerifier](https://code.google.com/p/equalsverifier/); I should be able to do this! I came up with the following, which I thought was pretty ironclad:
+I wrote [EqualsVerifier](http://www.jqno.nl/equalsverifier); I should be able to do this! I came up with the following, which I thought was pretty ironclad:
 
 <pre class="prettyprint">
 public final class School {
