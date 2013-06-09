@@ -13,18 +13,15 @@
     <h1 class="entry-title">{{ page.title }}</h1>
   </header>
   {{ content|raw }}
-  <footer>
-    <p class="meta">
-      Posted by <span class="author">{{ site.author }}</span>
-      &mdash;
-      <span class="date">{{ page.datum|date("j F Y") }}</span>
-    </p>
-    <div class="sharing">
-      {{ social.twitter() }}
-      {{ social.facebook(page.url) }}
-      {{ social.googleplus() }}
-    </div>
-  </footer>
+  {% if page.category %}
+    <footer>
+      <p class="meta">
+        Posted by <span class="author">{{ site.author }}</span>
+        &mdash;
+        <span class="date">{{ page.date|date("j F Y") }}</span>
+      </p>
+    </footer>
+  {% endif %}
 </article>
 <script>prettyPrint();</script>
 {% endblock %}

@@ -2,7 +2,6 @@
 title: Changelog
 blog: equalsverifier
 layout: equalsverifier
-datum: 2013-06-05
 ---
 What's new? Well, you can now ...
 
