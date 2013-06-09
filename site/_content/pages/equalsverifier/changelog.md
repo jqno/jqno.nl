@@ -36,7 +36,7 @@ Version 1.1.2
 -------------
 _March 1, 2012_
 
-* ... stop worrying about `EqualsVerifier` _recursively_ changing the value of non-final static fields, causing other tests to fail. (Issue 55, [http://code.google.com/p/equalsverifier/issues/detail?id=55#c8 Comment 8])
+* ... stop worrying about `EqualsVerifier` _recursively_ changing the value of non-final static fields, causing other tests to fail. (Issue 55, [Comment 8](http://code.google.com/p/equalsverifier/issues/detail?id=55#c8))
 
 Version 1.1.1
 -------------
@@ -49,9 +49,9 @@ Version 1.1
 _February 11, 2012_
 
 * ... get a warning if you forgot to include a field in your `equals` or `hashCode` method, by calling the `#allFieldsShouldBeUsed()` method on `EqualsVerifier`. ([Issue 53](https://code.google.com/p/equalsverifier/issues/detail?id=53))
-* ... get an error message if you include a reference-equality check (`this == obj`), followed by an incorrect instanceof check in your `equals` method. `EqualsVerifier` will now notice if you do an instanceof check for a class other than the one that you are testing. (Issue 55, [http://code.google.com/p/equalsverifier/issues/detail?id=55#c2 Comment 2])
-* ... stop worrying about `EqualsVerifier` changing the value of non-final static fields, causing other tests to fail. (Issue 52 and Issue 55)
-* ... stop worrying about adding prefab values for `File`, `List`, `Set`, `Map` and `Collection` to avoid unjustified warning. (Issue 49 and Issue 51)
+* ... get an error message if you include a reference-equality check (`this == obj`), followed by an incorrect instanceof check in your `equals` method. `EqualsVerifier` will now notice if you do an instanceof check for a class other than the one that you are testing. (Issue 55, [Comment 2](http://code.google.com/p/equalsverifier/issues/detail?id=55#c2))
+* ... stop worrying about `EqualsVerifier` changing the value of non-final static fields, causing other tests to fail. ([Issue 52](https://code.google.com/p/equalsverifier/issues/detail?id=52) and [Issue 55](https://code.google.com/p/equalsverifier/issues/detail?id=55))
+* ... stop worrying about adding prefab values for `File`, `List`, `Set`, `Map` and `Collection` to avoid unjustified warning. ([Issue 49](https://code.google.com/p/equalsverifier/issues/detail?id=49) and [Issue 51](https://code.google.com/p/equalsverifier/issues/detail?id=51))
 
 Version 1.0.2
 -------------
@@ -91,7 +91,7 @@ _November 15, 2010_
 * ... get a warning when you use a transient field in your `equals` or `hashCode` method. Don't worry; you can suppress this warning too.
 * ... stop worrying about adding prefab values for certain Java API classes, like `Data`, `GregorianCalendar`, or `Pattern`, to avoid that pesky recursion warning.
 * ... get a link to the [ErrorMessages Error messages] page to get more help, when !EqualsVerifier finds an error.
-* ... enjoy many javadoc improvements (including the one in Issue 32).
+* ... enjoy many javadoc improvements (including the one in [Issue 32](https://code.google.com/p/equalsverifier/issues/detail?id=32)).
 * Also, the back end is almost completely re-written.
 
 Version 0.6.5
