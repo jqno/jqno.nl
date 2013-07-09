@@ -29,10 +29,10 @@ First, let's set up a VIM folder in your Dropbox:
 
 <pre class="prettyprint language-vim">
 if has('win32') || has('win64')
-  set runtimepath+=$HOME/Dropbox/config/vim
+  set runtimepath^=$HOME/Dropbox/config/vim
   source ~\Dropbox\config\vim\vimrc.vim
 else
-  set runtimepath+=~/Dropbox/config/vim
+  set runtimepath^=~/Dropbox/config/vim
   source ~/Dropbox/config/vim/vimrc.vim
 endif
 </pre>
