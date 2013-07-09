@@ -12,7 +12,7 @@ Participants
 * Midge Ure
 * Live
 * Simple Minds
-* SinÃ©ad O'Connor
+* Sinéad O'Connor
 * Igudesman & Joo
 * Angels in Harlem Gospel Choir
 * Erik Mesie
