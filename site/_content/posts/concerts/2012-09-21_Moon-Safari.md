@@ -2,9 +2,9 @@
 title: Moon Safari
 tags: [ "Flamborough Head", "Moon Safari" ]
 category: "Lakei, Helmond"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5838179789104924177
-picasa_authkey: Gv1sRgCK_y2vqP2uzMQw
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5838179789104924177
+picasa_auth_key: Gv1sRgCK_y2vqP2uzMQw
 ---
 Support band
 ------------

@@ -2,9 +2,9 @@
 title: Colin Bass & IQ
 tags: [ "Colin Bass", "IQ" ]
 category: "De Boerderij, Zoetermeer"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837788469287916689
-picasa_authkey: Gv1sRgCImIirjVysjP1wE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837788469287916689
+picasa_auth_key: Gv1sRgCImIirjVysjP1wE
 ---
 Setlist
 -------

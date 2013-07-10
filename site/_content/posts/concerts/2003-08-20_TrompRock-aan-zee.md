@@ -2,9 +2,9 @@
 title: TrompRock aan zee
 tags: [ "De Honselse Harmonie", "Kayak", "Bobby Kimball" ]
 category: "strand Monster"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837792485579791281
-picasa_authkey: Gv1sRgCLCp7IWi3auWmAE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837792485579791281
+picasa_auth_key: Gv1sRgCLCp7IWi3auWmAE
 ---
 Setlist
 -------

@@ -20,8 +20,8 @@
   {% if page.youtube %}
     {{ media.youtube(page.youtube) }}
   {% endif %}
-  {% if page.picasa_userid %}
-    {{ media.picasa(page.picasa_userid, page.picasa_albumid, page.picasa_authkey) }}
+  {% if page.picasa_user_id %}
+    {{ media.picasa(page.picasa_user_id, page.picasa_album_id, page.picasa_auth_key) }}
   {% endif %}
   {{ content|raw }}
   <footer>

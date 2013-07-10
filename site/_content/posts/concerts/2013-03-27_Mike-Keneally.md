@@ -2,9 +2,9 @@
 title: Mike Keneally
 tags: [ "Mike Keneally", "Koh-I-Noor saxofoonkwartet", "Godsticks" ]
 category: "Paradox, Tilburg"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5861152122911614321
-picasa_authkey: CMmGm-HNkJriVQ
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5861152122911614321
+picasa_auth_key: CMmGm-HNkJriVQ
 ---
 Setlist Godsticks
 -----------------

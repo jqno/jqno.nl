@@ -2,9 +2,9 @@
 title: The Decemberists
 tags: [ "The Decemberists" ]
 category: "Paradiso, Amsterdam"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5838157731029020753
-picasa_authkey: Gv1sRgCODxpd24v9CR0wE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5838157731029020753
+picasa_auth_key: Gv1sRgCODxpd24v9CR0wE
 ---
 Setlist
 -------

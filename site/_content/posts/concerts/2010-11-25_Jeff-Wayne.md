@@ -2,9 +2,9 @@
 title: Jeff Wayne's Musical Version of The War of the Worlds
 tags: [ "Jeff Wayne", "Justin Hayward", "Chris Thompson" ]
 category: "Heineken Music Hall, Amsterdam"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5838144384853263969
-picasa_authkey: Gv1sRgCMHJhf-MxJOzngE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5838144384853263969
+picasa_auth_key: Gv1sRgCMHJhf-MxJOzngE
 ---
 Setlist
 -------

@@ -2,9 +2,9 @@
 title: The Straits
 tags: [ "The Straits" ]
 category: "013, Tilburg"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5765110035546286529
-picasa_authkey: Gv1sRgCOTB-cif2tj93QE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5765110035546286529
+picasa_auth_key: Gv1sRgCOTB-cif2tj93QE
 ---
 Setlist
 -------

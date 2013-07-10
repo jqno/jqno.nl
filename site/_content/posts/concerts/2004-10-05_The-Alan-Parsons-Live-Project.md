@@ -2,9 +2,9 @@
 title: The Alan Parsons Live Project
 tags: [ "The Alan Parsons Live Project" ]
 category: "013, Tilburg"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837787786298906145
-picasa_authkey: Gv1sRgCJWFyYuK4c-SVA
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837787786298906145
+picasa_auth_key: Gv1sRgCJWFyYuK4c-SVA
 ---
 Setlist
 -------

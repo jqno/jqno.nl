@@ -2,9 +2,9 @@
 title: The Alan Parsons Live Project
 tags: [ "The Alan Parsons Live Project" ]
 category: "Vredenburg, Utrecht"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837786758118018881
-picasa_authkey: Gv1sRgCL62ktqFq8PL9wE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837786758118018881
+picasa_auth_key: Gv1sRgCL62ktqFq8PL9wE
 ---
 Setlist
 -------

@@ -2,9 +2,9 @@
 title: The Pink Floyd Sound
 tags: [ "The Pink Floyd Sound" ]
 category: "De Effenaar, Eindhoven" 
-picasa_userid: 110660365905793904078
-picasa_albumid: 5838172080808086737
-picasa_authkey: Gv1sRgCN64tbfbyIzxNg
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5838172080808086737
+picasa_auth_key: Gv1sRgCN64tbfbyIzxNg
 ---
 Setlist
 -------

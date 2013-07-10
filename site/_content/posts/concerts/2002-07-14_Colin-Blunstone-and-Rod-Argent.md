@@ -2,9 +2,9 @@
 title: Colin Blunstone & Rod Argent
 tags: [ "Colin Blunstone", "Rod Argent" ]
 category: "St. Stevenskerk, Nijmegen"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837788787549153201
-picasa_authkey: Gv1sRgCMaN7Y-Cx6yOowE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837788787549153201
+picasa_auth_key: Gv1sRgCMaN7Y-Cx6yOowE
 ---
 Setlist
 -------

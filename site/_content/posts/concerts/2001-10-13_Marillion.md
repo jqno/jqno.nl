@@ -2,9 +2,9 @@
 title: Marillion
 tags: [ "White Buffalo", "Marillion" ]
 category: "013, Tilburg"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837790846370273009
-picasa_authkey: Gv1sRgCLjjl87xudCw2AE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837790846370273009
+picasa_auth_key: Gv1sRgCLjjl87xudCw2AE
 ---
 Support band
 ------------

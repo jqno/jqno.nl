@@ -2,9 +2,9 @@
 title: Marillion
 tags: [ "Gazpacho", "Marillion" ]
 category: "013, Tilburg"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837791196797929073
-picasa_authkey: Gv1sRgCNqI8Iji6K-MKA
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837791196797929073
+picasa_auth_key: Gv1sRgCNqI8Iji6K-MKA
 ---
 Support band
 ------------

@@ -2,9 +2,9 @@
 title: Al Stewart
 tags: [ "Al Stewart" ]
 category: "Frits Philips Muziekcentrum, Eindhoven"
-picasa_userid: 110660365905793904078
-picasa_albumid: 5837787278231491553
-picasa_authkey: Gv1sRgCP_f3OWP4uuQkgE
+picasa_user_id: 110660365905793904078
+picasa_album_id: 5837787278231491553
+picasa_auth_key: Gv1sRgCP_f3OWP4uuQkgE
 ---
 Setlist
 -------
