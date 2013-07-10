@@ -39,4 +39,4 @@ Band members
 
 The company
 -----------
-Mama, Judith, Bob, Els, Lieke
+Mama, *, Bob, Els, Lieke

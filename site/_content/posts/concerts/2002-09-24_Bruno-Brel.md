@@ -43,11 +43,11 @@ Band members
 
 The company
 -----------
-Judith, Bob, Els, Bas, Konnie
+*, Bob, Els, Bas, Konnie
 
 Story
 -----
-Ben vanavond naar het concert van Bruno Brel geweest, met zus Judith en ooms en tantes Bas & Konnie en Bob & Els.
+Ben vanavond naar het concert van Bruno Brel geweest, met mijn zus en mijn ooms en tantes Bas & Konnie en Bob & Els.
 
 * "Ik ga vanavond naar Bruno Brel", zei Els tegen haar collega.
 * "Bruno Brel, is dat de zoon van?" vroeg de collega.
@@ -58,7 +58,7 @@ Desalniettemin is Bruno Brel wel degelijk de neef van Jacques en dat is wel te m
 
 Op het podium was dat nóg meer het geval. De stem, de gebaren, de energie, het theater... Van tevoren dacht ik nog: dichterbij dan dit kan je niet komen. En dat was ook zo. Bijna iedereen die geprobeerd heeft Brel te coveren en dicht bij het origineel te blijven is dat niet gelukt, maar Bruno kán het. Hij heeft er bovendien ook de lelijke kop voor :).
 
-De zaal was half leeg toen de deuren sloten zodat Bob en Els, die later kaartjes hadden gekocht dan wij (Bas, Konnie, Judith, ik), stiekem een paar rijen naar voren zijn gegaan om wat dichter bij ons te zitten. De mensen in de zaal waren ook allemaal minstens tien jaar ouder dan Judith en ik, maar daar ben ik inmiddels aan gewend :). Bij de meeste concerten die ik tot nog toe heb bezocht waren de enige jongeren degenen die meegesleept werden door hun ouders. Dit was echter de eerste keer dat we écht de enige jongeren waren.
+De zaal was half leeg toen de deuren sloten zodat Bob en Els, die later kaartjes hadden gekocht dan wij (Bas, Konnie, mijn zusje, ik), stiekem een paar rijen naar voren zijn gegaan om wat dichter bij ons te zitten. De mensen in de zaal waren ook allemaal minstens tien jaar ouder dan mijn zusje en ik, maar daar ben ik inmiddels aan gewend :). Bij de meeste concerten die ik tot nog toe heb bezocht waren de enige jongeren degenen die meegesleept werden door hun ouders. Dit was echter de eerste keer dat we écht de enige jongeren waren.
 
 Het was kinderspel om mijn fototoestel naar binnen te smokkelen, maar ik heb geen foto's genomen. Ik heb er gewoon niet aan gedacht en de zeldzame momenten dat ik er wel aan dacht had ik er eigenlijk het lef niet voor :).
 
@@ -77,7 +77,7 @@ La huitième fois qu'j't'ai vue, ben, t'étais tout nue
 
 Op dat punt zei hij in gebroken Nederlands: "Deze heb ik zélf geschreven" (in tegenstelling tot de twee voorgaande nummers), lachte ondeugend en ging verder: "La neuvième et la dixième fois..." Het liedje ontwikkelde zich vervolgens overigens in een gevoelig liedje over twee geliefden die elkaar uit het oog raken :).
 
-Hoewel zijn eigen nummers erg goed zijn, waren het echter toch de liedjes van Jacques Brel, die ik zo goed ken, die de avond geslaagd maakten. Tot mijn genoegen zong hij er ook enkele die niet op zijn cd staan: onder andere 'Ces gens-là' en in de tweede helft 'Fernand', twee favorieten van mij. Telkens als hij de woorden "Ces gens-là" zong wees hij de zaal in, waarbij hij overigens eenmaal naar Judith, die naast me zat, wees en eenmaal naar de vrouw die aan de andere kant naast me zat. Typisch.
+Hoewel zijn eigen nummers erg goed zijn, waren het echter toch de liedjes van Jacques Brel, die ik zo goed ken, die de avond geslaagd maakten. Tot mijn genoegen zong hij er ook enkele die niet op zijn cd staan: onder andere 'Ces gens-là' en in de tweede helft 'Fernand', twee favorieten van mij. Telkens als hij de woorden "Ces gens-là" zong wees hij de zaal in, waarbij hij overigens eenmaal naar mijn zusje, die naast me zat, wees en eenmaal naar de vrouw die aan de andere kant naast me zat. Typisch.
 
 Ook zong hij 'Hé, m'man!', een lied dat door Jacques Brel is geschreven maar nooit door hem is opgenomen. Na afloop daarvan probeerde hij dit in het Nederlands uit te leggen, maar halverwege gaf hij op en ging in het Frans verder door te zeggen dat hij blij was dat wij, het publiek, het zo waardeerden.
 

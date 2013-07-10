@@ -51,4 +51,4 @@ Band members
 
 The company
 -----------
-mama, Judith, Bas, Konnie
+mama, *, Bas, Konnie

@@ -14,7 +14,7 @@ Band members
 
 The company
 -----------
-Judith, Bob
+*, Bob
 
 Story
 -----

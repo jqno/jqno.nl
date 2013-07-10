@@ -10,4 +10,4 @@ Band members
 
 The company
 -----------
-Judith, mama, Bob, Els
+*, mama, Bob, Els
