@@ -152,6 +152,32 @@ public void Attempt6()
 
 Of course we could lessen that load by turning `resetEvent` into a field, and using `[SetUp]` and `[TearDown]` methods to initialize it and clean it up. But still a lot of boilerplate remains.
 
+**EDIT** Are we done? I thought so, but as Ralph correctly pointed out in the comments, this still doesn't work. If the assert fails, it will throw an exception, yes--but it will do so in the background thread, not in NUnit's main thread. This means that NUnit doesn't pick up on it, and the behaviour that follows is undefined. It could report success, or it could fail to terminate at all. The only thing you can be certain of, is that the test won't actually fail in the way you want. So we have to move the assertion back into the main thread:
+
+<pre class="prettyprint">
+[Test]
+public void Attempt7()
+{
+    var finder = new AnswerFinder();
+    using (var resetEvent = new ManualResetEventSlim(false))
+    {
+        int answer = -1;
+        AnswerHandler handler = (sender, e) =>
+        {
+            answer = e.Answer;
+            resetEvent.Set();
+        };
+        finder.AnswerEvent += handler;
+        finder.RaiseTheAnswer();
+        Assert.That(resetEvent.Wait(TimeSpan.FromMilliseconds(100)), Is.True);
+        Assert.That(answer, Is.EqualTo(42));
+        finder.AnswerEvent -= handler;
+    }
+}
+</pre>
+
+And now, we're stuck with that nasty `-1` again.
+
 Thankfully, we can do better. A lot better.
 
 <a name='solution'></a>
@@ -206,7 +232,10 @@ public void TheSameEventTwice()
 }
 </pre>
 
-Unfortunately, it doesn't seem possible in C# to pass an event as a parameter. That's why I opted for the "stringly typed" option of passing the event's name as a string. If you know of a better way to handle this, I would very much like to hear about it!
+Here's a few things `EventMonitor` unfortunately can't do:
+
+* Unfortunately, it doesn't seem possible in C# to pass an event as a parameter. That's why I opted for the "stringly typed" option of passing the event's name as a string. If you know of a better way to handle this, I would very much like to hear about it!
+* It's not fully thread-safe. If you have asynchronous events, and several of them are raised at the same time, `EventMonitor`'s behaviour will be undefined. If you raise only one asynchronous event, or if you ensure that they aren't raised simultaneously, it will be fine. This issue could be solved by employing a lock in the `Handle` method.
 
 <a name='code'></a>
 ## Full code of `EventMonitor`
@@ -218,93 +247,115 @@ using System.Reflection;
 using System.Threading;
 using NUnit.Framework;
 
-namespace EventMonitor
+namespace Test
 {
-	public enum Mode
-	{
-		MANUAL,
-		AUTOMATIC
-	}
+    public enum Mode
+    {
+        MANUAL,
+        AUTOMATIC
+    }
 
-	public class EventMonitor : IDisposable
-	{
-		private static readonly int MaximumArity = 4;
+    public class EventMonitor : IDisposable
+    {
+        private static readonly int MaximumArity = 4;
 
-		private readonly object objectUnderTest;
-		private readonly EventInfo eventInfo;
-		private readonly Delegate wrappedHandler;
-		private readonly TimeSpan timeout;
-		private readonly Mode mode;
-		private readonly ManualResetEventSlim resetEvent;
+        private readonly object objectUnderTest;
+        private readonly Delegate handler;
+        private readonly TimeSpan timeout;
+        private readonly Mode mode;
 
-		public EventMonitor(object objectUnderTest, string eventName, Delegate handler, Mode mode = Mode.AUTOMATIC)
-			: this(objectUnderTest, eventName, handler, TimeSpan.FromMilliseconds(500), mode)
-		{ }
+        private readonly ManualResetEventSlim resetEvent;
+        private readonly EventInfo eventInfo;
+        private readonly Delegate wrappedHandler;
 
-		public EventMonitor(object objectUnderTest, string eventName, Delegate handler, TimeSpan timeout, Mode mode = Mode.AUTOMATIC)
-		{
-			this.objectUnderTest = objectUnderTest;
-			this.timeout = timeout;
-			this.mode = mode;
-			this.resetEvent = new ManualResetEventSlim(false);
+        private Exception exception = null;
 
-			this.eventInfo = objectUnderTest.GetType().GetEvent(eventName);
-			Assert.That(eventInfo, Is.Not.Null, string.Format("Event '{0}' not found in class {1}", eventName, objectUnderTest.GetType().Name));
+        public EventMonitor(object objectUnderTest, string eventName, Delegate handler, Mode mode = Mode.AUTOMATIC)
+            : this(objectUnderTest, eventName, handler, TimeSpan.FromMilliseconds(500), mode)
+        { }
 
-			this.wrappedHandler = Delegate.Combine(handler, GenerateRecordingDelegate(eventInfo.EventHandlerType));
-			eventInfo.AddEventHandler(objectUnderTest, wrappedHandler);
-		}
+        public EventMonitor(object objectUnderTest, string eventName, Delegate handler, TimeSpan timeout, Mode mode = Mode.AUTOMATIC)
+        {
+            this.objectUnderTest = objectUnderTest;
+            this.handler = handler;
+            this.timeout = timeout;
+            this.mode = mode;
 
-		public virtual void Dispose()
-		{
-			if (mode == Mode.AUTOMATIC)
-			{
-				Verify();
-			}
-			eventInfo.RemoveEventHandler(objectUnderTest, wrappedHandler);
-			resetEvent.Dispose();
-		}
+            this.resetEvent = new ManualResetEventSlim(false);
+            this.eventInfo = objectUnderTest.GetType().GetEvent(eventName);
+            Assert.That(eventInfo, Is.Not.Null, string.Format("Event '{0}' not found in class {1}", eventName, objectUnderTest.GetType().Name));
 
-		public void Verify()
-		{
-			Assert.That(resetEvent.Wait(timeout), Is.True, string.Format("Event '{0}' was not raised!", eventInfo.Name));
-			resetEvent.Reset();
-		}
+            this.wrappedHandler = GenerateRecordingDelegate(eventInfo.EventHandlerType);
+            eventInfo.AddEventHandler(objectUnderTest, wrappedHandler);
+        }
 
-		private Delegate GenerateRecordingDelegate(Type eventHandlerType)
-		{
-			var method = eventHandlerType.GetMethod("Invoke");
-			int arity = method.GetParameters().Count();
-			Assert.That(arity, Is.LessThanOrEqualTo(MaximumArity), string.Format("Events of arity up to {0} supported; this event has arity {1}", MaximumArity, arity));
-			var methodName = string.Format("Arity{0}", arity);
-			var eventRegisterMethod = typeof(EventMonitor).GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
-			return Delegate.CreateDelegate(eventHandlerType, this, eventRegisterMethod);
-		}
+        public virtual void Dispose()
+        {
+            if (mode == Mode.AUTOMATIC)
+            {
+                Verify();
+            }
+            eventInfo.RemoveEventHandler(objectUnderTest, wrappedHandler);
+            resetEvent.Dispose();
+        }
 
-		private void Arity0()
-		{
-			resetEvent.Set();
-		}
+        public void Verify()
+        {
+            if (exception != null)
+            {
+                throw exception;
+            }
+            Assert.That(resetEvent.Wait(timeout), Is.True, string.Format("Event '{0}' was not raised!", eventInfo.Name));
+            resetEvent.Reset();
+        }
 
-		private void Arity1(object arg1)
-		{
-			resetEvent.Set();
-		}
+        private Delegate GenerateRecordingDelegate(Type eventHandlerType)
+        {
+            var method = eventHandlerType.GetMethod("Invoke");
+            int arity = method.GetParameters().Count();
+            Assert.That(arity, Is.LessThanOrEqualTo(MaximumArity), string.Format("Events of arity up to {0} supported; this event has arity {1}", MaximumArity, arity));
+            var methodName = string.Format("Arity{0}", arity);
+            var eventRegisterMethod = typeof(EventMonitor).GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
+            return Delegate.CreateDelegate(eventHandlerType, this, eventRegisterMethod);
+        }
 
-		private void Arity2(object arg1, object arg2)
-		{
-			resetEvent.Set();
-		}
+        private void Handle(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                exception = e;
+            }
+            resetEvent.Set();
+        }
 
-		private void Arity3(object arg1, object arg2, object arg3)
-		{
-			resetEvent.Set();
-		}
-		
-		private void Arity4(object arg1, object arg2, object arg3, object arg4)
-		{
-			resetEvent.Set();
-		}
-	}
+        private void Arity0()
+        {
+            Handle(() => handler.DynamicInvoke());
+        }
+
+        private void Arity1(object arg1)
+        {
+            Handle(() => handler.DynamicInvoke(arg1));
+        }
+
+        private void Arity2(object arg1, object arg2)
+        {
+            Handle(() => handler.DynamicInvoke(arg1, arg2));
+        }
+
+        private void Arity3(object arg1, object arg2, object arg3)
+        {
+            Handle(() => handler.DynamicInvoke(arg1, arg2, arg3));
+        }
+
+        private void Arity4(object arg1, object arg2, object arg3, object arg4)
+        {
+            Handle(() => handler.DynamicInvoke(arg1, arg2, arg3, arg4));
+        }
+    }
 }
 </pre>
