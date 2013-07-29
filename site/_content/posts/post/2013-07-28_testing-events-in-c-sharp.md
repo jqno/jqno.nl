@@ -285,7 +285,7 @@ namespace Test
             this.eventInfo = objectUnderTest.GetType().GetEvent(eventName);
             Assert.That(eventInfo, Is.Not.Null, string.Format("Event '{0}' not found in class {1}", eventName, objectUnderTest.GetType().Name));
 
-            this.wrappedHandler = GenerateRecordingDelegate(eventInfo.EventHandlerType);
+            this.wrappedHandler = GenerateWrappedDelegate(eventInfo.EventHandlerType);
             eventInfo.AddEventHandler(objectUnderTest, wrappedHandler);
         }
 
@@ -309,7 +309,7 @@ namespace Test
             resetEvent.Reset();
         }
 
-        private Delegate GenerateRecordingDelegate(Type eventHandlerType)
+        private Delegate GenerateWrappedDelegate(Type eventHandlerType)
         {
             var method = eventHandlerType.GetMethod("Invoke");
             int arity = method.GetParameters().Count();
