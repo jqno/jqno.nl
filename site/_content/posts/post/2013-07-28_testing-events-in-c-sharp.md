@@ -49,7 +49,9 @@ public void Attempt1()
 }
 </pre>
 
-Or rather, we could write something like this, because while in this particular case no memory leak would occur, it's usually good practice to clean up after yourself:
+Although--doesn't this cause a [memory leak](http://stackoverflow.com/q/4526829/127863)? Actually, no, because both the producer of, and the subscriber to the event, have the same life cycle and can be garbage collected together. Still, one could argue (and many people do) that it's good practice to explicitly unsubscribe from the event anyway: that way, you've got your bases covered if you do run into a situation where such a memory leak would occur. Or even worse: you could refactor your code, change the scope of either the `finder` or the event handler, and you forget to update all the places where either of them is used, and voilà: you've introduced a memory leak and you didn't even know it. Better safe than sorry, right?
+
+So now we end up with something like this:
 
 <pre class="prettyprint">
 [Test]
@@ -79,7 +81,7 @@ public void Attempt3()
         answer = e.Answer;
     };
     finder.AnswerEvent += handler;
-    finder.RaiseTheAnswer();
+    finder.FindTheAnswer();
     Assert.That(answer, Is.EqualTo(42));
     finder.AnswerEvent -= handler;
 }
@@ -99,7 +101,7 @@ public void Attempt4()
         Assert.That(e.Answer, Is.EqualTo(42));
     };
     finder.AnswerEvent += handler;
-    finder.RaiseTheAnswer();
+    finder.FindTheAnswer();
     Assert.That(eventWasCalled, Is.True);
     finder.AnswerEvent -= handler;
 }
@@ -122,7 +124,7 @@ public void Attempt5()
         Assert.That(e.Answer, Is.EqualTo(42));
     };
     finder.AnswerEvent += handler;
-    finder.RaiseTheAnswer();
+    finder.FindTheAnswer();
     Assert.That(resetEvent.Wait(TimeSpan.FromMilliseconds(500)), Is.True);
     finder.AnswerEvent -= handler;
 }
@@ -143,7 +145,7 @@ public void Attempt6()
             Assert.That(e.Answer, Is.EqualTo(42));
         };
         finder.AnswerEvent += handler;
-        finder.RaiseTheAnswer();
+        finder.FindTheAnswer();
         Assert.That(resetEvent.Wait(TimeSpan.FromMilliseconds(100)), Is.True);
         finder.AnswerEvent -= handler;
     }
@@ -168,7 +170,7 @@ public void Attempt7()
             resetEvent.Set();
         };
         finder.AnswerEvent += handler;
-        finder.RaiseTheAnswer();
+        finder.FindTheAnswer();
         Assert.That(resetEvent.Wait(TimeSpan.FromMilliseconds(100)), Is.True);
         Assert.That(answer, Is.EqualTo(42));
         finder.AnswerEvent -= handler;
@@ -196,7 +198,7 @@ public void FinalAttempt()
     };
     using (new EventMonitor(finder, "AnswerEvent", handler))
     {
-        finder.RaiseTheAnswer();
+        finder.FindTheAnswer();
     }
 }
 </pre>
@@ -222,11 +224,11 @@ public void TheSameEventTwice()
     using (var monitor = new EventMonitor(finder, "AnswerEvent",
                                           handler, Mode.MANUAL))
     {
-        finder.RaiseTheAnswer();
+        finder.FindTheAnswer();
         monitor.Verify();
 
         // Let's do it again!
-        finder.RaiseTheAnswer();
+        finder.FindTheAnswer();
         monitor.Verify();
     }
 }
