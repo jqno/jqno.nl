@@ -1,6 +1,6 @@
 ---
 title: Holy serafins!
-tags: [ code, literature, "references in popular culture", "umberto eco" ]
+tags: [ code, literature, references-in-popular-culture, umberto-eco ]
 ---
 Who would expect, while reading High Literature, to see a piece of BASIC code
 actually included in the text? Not me, that's for sure. But if you read Umerto
