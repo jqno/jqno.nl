@@ -239,6 +239,9 @@ Here's a few things `EventMonitor` unfortunately can't do:
 * Unfortunately, it doesn't seem possible in C# to pass an event as a parameter. That's why I opted for the "stringly typed" option of passing the event's name as a string. If you know of a better way to handle this, I would very much like to hear about it!
 * It's not fully thread-safe. If you have asynchronous events, and several of them are raised at the same time, `EventMonitor`'s behaviour will be undefined. If you raise only one asynchronous event, or if you ensure that they aren't raised simultaneously, it will be fine. This issue could be solved by employing a lock in the `Handle` method.
 
+### Update, October 16th, 2013
+Fixed the code, so that it will handle event delegates with primitive type arguments, as well as object type arguments, by adding generics to the solution, as suggested in [this StackOverflow question](http://stackoverflow.com/q/19346023/127863).
+
 <a name='code'></a>
 ## Full code of `EventMonitor`
 
@@ -248,116 +251,131 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using NUnit.Framework;
+using NUnit.Framework.SyntaxHelpers;
 
 namespace Test
 {
-    public enum Mode
-    {
-        MANUAL,
-        AUTOMATIC
-    }
+	public enum Mode
+	{
+		MANUAL,
+		AUTOMATIC
+	}
 
-    public class EventMonitor : IDisposable
-    {
-        private static readonly int MaximumArity = 4;
+	public class EventMonitor : IDisposable
+	{
+		private static readonly int MaximumArity = 4;
 
-        private readonly object objectUnderTest;
-        private readonly Delegate handler;
-        private readonly TimeSpan timeout;
-        private readonly Mode mode;
+		private readonly object objectUnderTest;
+		private readonly Delegate handler;
+		private readonly TimeSpan timeout;
+		private readonly Mode mode;
 
-        private readonly ManualResetEventSlim resetEvent;
-        private readonly EventInfo eventInfo;
-        private readonly Delegate wrappedHandler;
+		private readonly ManualResetEventSlim resetEvent;
+		private readonly EventInfo eventInfo;
+		private readonly Delegate wrappedHandler;
 
-        private Exception exception = null;
+		private Exception exception = null;
 
-        public EventMonitor(object objectUnderTest, string eventName, Delegate handler, Mode mode = Mode.AUTOMATIC)
-            : this(objectUnderTest, eventName, handler, TimeSpan.FromMilliseconds(500), mode)
-        { }
+		public EventMonitor(object objectUnderTest, string eventName, Delegate handler, Mode mode = Mode.AUTOMATIC)
+			: this(objectUnderTest, eventName, handler, TimeSpan.FromMilliseconds(500), mode)
+		{ }
 
-        public EventMonitor(object objectUnderTest, string eventName, Delegate handler, TimeSpan timeout, Mode mode = Mode.AUTOMATIC)
-        {
-            this.objectUnderTest = objectUnderTest;
-            this.handler = handler;
-            this.timeout = timeout;
-            this.mode = mode;
+		public EventMonitor(object objectUnderTest, string eventName, Delegate handler, TimeSpan timeout, Mode mode = Mode.AUTOMATIC)
+		{
+			this.objectUnderTest = objectUnderTest;
+			this.handler = handler;
+			this.timeout = timeout;
+			this.mode = mode;
 
-            this.resetEvent = new ManualResetEventSlim(false);
-            this.eventInfo = objectUnderTest.GetType().GetEvent(eventName);
-            Assert.That(eventInfo, Is.Not.Null, string.Format("Event '{0}' not found in class {1}", eventName, objectUnderTest.GetType().Name));
+			this.resetEvent = new ManualResetEventSlim(false);
+			this.eventInfo = objectUnderTest.GetType().GetEvent(eventName);
+			Assert.That(eventInfo, Is.Not.Null, string.Format("Event '{0}' not found in class {1}", eventName, objectUnderTest.GetType().Name));
 
-            this.wrappedHandler = GenerateWrappedDelegate(eventInfo.EventHandlerType);
-            eventInfo.AddEventHandler(objectUnderTest, wrappedHandler);
-        }
+			this.wrappedHandler = GenerateWrappedDelegate(eventInfo.EventHandlerType);
+			eventInfo.AddEventHandler(objectUnderTest, wrappedHandler);
+		}
 
-        public virtual void Dispose()
-        {
-            if (mode == Mode.AUTOMATIC)
-            {
-                Verify();
-            }
-            eventInfo.RemoveEventHandler(objectUnderTest, wrappedHandler);
-            resetEvent.Dispose();
-        }
+		public virtual void Dispose()
+		{
+			if (mode == Mode.AUTOMATIC)
+			{
+				Verify();
+			}
+			eventInfo.RemoveEventHandler(objectUnderTest, wrappedHandler);
+			resetEvent.Dispose();
+		}
 
-        public void Verify()
-        {
-            if (exception != null)
-            {
-                throw exception;
-            }
-            Assert.That(resetEvent.Wait(timeout), Is.True, string.Format("Event '{0}' was not raised!", eventInfo.Name));
-            resetEvent.Reset();
-        }
+		public void Verify()
+		{
+			if (exception != null)
+			{
+				throw exception;
+			}
+			Assert.That(resetEvent.Wait(timeout), Is.True, string.Format("Event '{0}' was not raised!", eventInfo.Name));
+			resetEvent.Reset();
+		}
 
-        private Delegate GenerateWrappedDelegate(Type eventHandlerType)
-        {
-            var method = eventHandlerType.GetMethod("Invoke");
-            int arity = method.GetParameters().Count();
-            Assert.That(arity, Is.LessThanOrEqualTo(MaximumArity), string.Format("Events of arity up to {0} supported; this event has arity {1}", MaximumArity, arity));
-            var methodName = string.Format("Arity{0}", arity);
-            var eventRegisterMethod = typeof(EventMonitor).GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
-            return Delegate.CreateDelegate(eventHandlerType, this, eventRegisterMethod);
-        }
+		private Delegate GenerateWrappedDelegate(Type eventHandlerType)
+		{
+			var method = eventHandlerType.GetMethod("Invoke");
+			var parameters = method.GetParameters();
+			int arity = parameters.Count();
+			Assert.That(arity, Is.LessThanOrEqualTo(MaximumArity), string.Format("Events of arity up to {0} supported; this event has arity {1}", MaximumArity, arity));
+			var methodName = string.Format("Arity{0}", arity);
+			var eventRegisterMethod = typeof(EventMonitor).GetMethod(methodName, BindingFlags.NonPublic | BindingFlags.Instance);
+			if (arity > 0)
+			{
+				eventRegisterMethod = eventRegisterMethod.MakeGenericMethod(parameters.Select(p => p.ParameterType).ToArray());
+			}
+			return Delegate.CreateDelegate(eventHandlerType, this, eventRegisterMethod);
+		}
 
-        private void Handle(Action action)
-        {
-            try
-            {
-                action();
-            }
-            catch (Exception e)
-            {
-                exception = e;
-            }
-            resetEvent.Set();
-        }
+		private void Handle(Action action)
+		{
+			try
+			{
+				action();
+			}
+			catch (Exception e)
+			{
+				exception = e;
+			}
+			resetEvent.Set();
+		}
 
-        private void Arity0()
-        {
-            Handle(() => handler.DynamicInvoke());
-        }
+		private void Arity0()
+		{
+			Handle(() => handler.DynamicInvoke());
+		}
 
-        private void Arity1(object arg1)
-        {
-            Handle(() => handler.DynamicInvoke(arg1));
-        }
+		private void Arity1&lt;T>(T arg1)
+		{
+			Handle(() => handler.DynamicInvoke(Convert.ChangeType(arg1, arg1.GetType())));
+		}
 
-        private void Arity2(object arg1, object arg2)
-        {
-            Handle(() => handler.DynamicInvoke(arg1, arg2));
-        }
+		private void Arity2&lt;T1, T2>(T1 arg1, T2 arg2)
+		{
+			Handle(() => handler.DynamicInvoke(
+					Convert.ChangeType(arg1, arg1.GetType()),
+					Convert.ChangeType(arg2, arg2.GetType())));
+		}
 
-        private void Arity3(object arg1, object arg2, object arg3)
-        {
-            Handle(() => handler.DynamicInvoke(arg1, arg2, arg3));
-        }
+		private void Arity3&lt;T1, T2, T3>(T1 arg1, T2 arg2, T3 arg3)
+		{
+			Handle(() => handler.DynamicInvoke(
+					Convert.ChangeType(arg1, arg1.GetType()),
+					Convert.ChangeType(arg2, arg2.GetType()),
+					Convert.ChangeType(arg3, arg3.GetType())));
+		}
 
-        private void Arity4(object arg1, object arg2, object arg3, object arg4)
-        {
-            Handle(() => handler.DynamicInvoke(arg1, arg2, arg3, arg4));
-        }
-    }
+		private void Arity4&lt;T1, T2, T3, T4>(T1 arg1, T2 arg2, T3 arg3, T4 arg4)
+		{
+			Handle(() => handler.DynamicInvoke(
+					Convert.ChangeType(arg1, arg1.GetType()),
+					Convert.ChangeType(arg2, arg2.GetType()),
+					Convert.ChangeType(arg3, arg3.GetType()),
+					Convert.ChangeType(arg4, arg4.GetType())));
+		}
+	}
 }
 </pre>
