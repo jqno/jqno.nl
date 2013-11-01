@@ -27,6 +27,7 @@ Band members
 * _vocals, guitar, keys_: Steven Wilson
 * _drums_: Marco Minneman
 * _bass_: Nick Beggs
+* _guitar_: Aziz Ibrahim
 * _keys_: Gary Husband
 * _flute, saxophone_: Theo Travis
 
