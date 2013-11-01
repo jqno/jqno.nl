@@ -3,6 +3,7 @@ site:
     description: by the way: things I want to say
     meta_description: This is my blog on software development and (sometimes) other things.
     author: Jan Ouwens
+    timezone: Europe/Amsterdam
     pretty_urls: true
     posts_per_page: 0
     blogs: [ post, equalsverifier, concerts ]
