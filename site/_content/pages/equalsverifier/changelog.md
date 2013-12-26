@@ -5,6 +5,16 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.4
+-----------
+_December 27, 2013_
+
+* ...have confidence that EqualsVerifier covers 100% of your `equals` and `hashCode` methods ([FAQ]({{ pcurl('equalsverifier/faq#coverage') }})).
+* ...specifically ignore certain fields using `allFieldsShouldBeUsedExcept()` ([Issue 82](https://code.google.com/p/equalsverifier/issues/detail?id=82))
+* ...test classes that have an array field, but that don't declare an `equals` method.
+* ...get clearer error messages around abstract delegation. This clarifies especially classes that contain Joda-Time `LocalDate` fields.
+* ...stop worrying about adding prefab values for BitSet. ([Issue 86](https://code.google.com/p/equalsverifier/issues/detail?id=86))
+
 Version 1.3.1
 -------------
 _June 9, 2013_
@@ -37,7 +47,7 @@ Version 1.1.4
 -----------
 _January 14, 2013_
 
-* ... fork EqualsVerifier on !GitHub! EqualsVerifier has moved its code to !GitHub. The project frontpage will remain at Google Code.
+* ... fork EqualsVerifier on GitHub! EqualsVerifier has moved its code to GitHub. The project frontpage will remain at Google Code.
 * ... use EqualsVerifier on a class whose superclasses have no declarations for `equals` and `hashCode`. ([Issue 63](https://code.google.com/p/equalsverifier/issues/detail?id=63))
 * ... get an error when using `#allFieldsShouldBeUsed()` on a class that has fields but no declarations for `equals` and `hashCode` (and hence doesn't use these fields). ([Issue 67](https://code.google.com/p/equalsverifier/issues/detail?id=67))
 * ... get a more informative error message on Abstract Delegation errors: EqualsVerifier now also mentions the name of the abstract method that was called.
