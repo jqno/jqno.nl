@@ -63,6 +63,7 @@ the path to the APK file that you can upload to the Android market. It's in the
 `target/` folder and it ends with `-market.apk`.
 
 Release your release
+--------------------
 
 Now that you have a properly signed APK file, you can release your app. Go to
 [Android Developer Console](http://market.android.com/publish) and follow the
