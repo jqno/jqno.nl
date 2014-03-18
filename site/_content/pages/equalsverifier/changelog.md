@@ -5,12 +5,19 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.4.1
+-------------
+_March 18, 2014_
+
+* ...pass enums through EqualsVerifier without error. ([Issue 87](https://code.google.com/p/equalsverifier/issues/detail?id=87))
+* ...get more thorough reflexivity and symmetry tests, which will catch small mistakes such as the one in [Issue 88](https://code.google.com/p/equalsverifier/issues/detail?id=88).
+
 Version 1.4
 -----------
 _December 27, 2013_
 
-* ...have confidence that EqualsVerifier covers 100% of your `equals` and `hashCode` methods ([FAQ]({{ pcurl('equalsverifier/faq#coverage') }})).
-* ...specifically ignore certain fields using `allFieldsShouldBeUsedExcept()` ([Issue 82](https://code.google.com/p/equalsverifier/issues/detail?id=82))
+* ...have confidence that EqualsVerifier covers 100% of your `equals` and `hashCode` methods. ([FAQ]({{ pcurl('equalsverifier/faq#coverage') }}))
+* ...specifically ignore certain fields using `allFieldsShouldBeUsedExcept()`. ([Issue 82](https://code.google.com/p/equalsverifier/issues/detail?id=82))
 * ...test classes that have an array field, but that don't declare an `equals` method.
 * ...get clearer error messages around abstract delegation. This clarifies especially classes that contain Joda-Time `LocalDate` fields.
 * ...stop worrying about adding prefab values for BitSet. ([Issue 86](https://code.google.com/p/equalsverifier/issues/detail?id=86))

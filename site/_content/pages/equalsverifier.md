@@ -12,11 +12,10 @@ Quick start
         &lt;dependency>
             &lt;groupId>nl.jqno.equalsverifier&lt;/groupId>
             &lt;artifactId>equalsverifier&lt;/artifactId>
-            &lt;version>???&lt;/version>
+            &lt;version>1.4.1&lt;/version>
             &lt;scope>test&lt;/scope>
         &lt;/dependency>
         </pre>
-        Don't forget to replace `???` with the most recent version number!
     * ANT users, make sure the following jars are on the classpath:
 
         * [objenesis-1.1.jar](http://code.google.com/p/objenesis/)
