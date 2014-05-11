@@ -1,7 +1,7 @@
 ---
 title: Tubular Bells for Two
 tags: [ "Tubular Bells for Two" ]
-category: "Concertzaal, Tilburg"
+category: "Theaters Tilburg"
 ---
 Setlist
 -------
