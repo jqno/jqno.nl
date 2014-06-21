@@ -2,6 +2,9 @@
 title: Her Majesty
 tags: [ "Her Majesty", "Bertolf" ]
 category: "Theaters Tilburg"
+picasa_user_id: 110660365905793904078
+picasa_album_id: 6027361310170809905
+picasa_auth_key: CJPu77y-z8SAlAE
 ---
 Setlist
 -------
