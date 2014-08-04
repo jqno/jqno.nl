@@ -52,7 +52,7 @@ Oh, by the way: the scale of the vertical axis is logarithmic. OMG.
 
 So the moral of the story: ten minutes of profiling and 2 seconds of changing 3 bytes, saved me a lot of time rewriting the xml to csv or messing with a rule engine that I don't understand fully.
 
-Another moral of the story is that I, too, am not immune to the premature optimiation bug, either. If I'd had only one supsicion, instead of two, I might never have fired up VisualVM to find out the cause was actually a third thing that I would never have come up with otherwise.
+Another moral of the story is that I, too, am not immune to the premature optimization bug, either. If I'd had only one supsicion, instead of two, I might never have fired up VisualVM to find out the cause was actually a third thing that I would never have come up with otherwise.
 
 Let me finish up with [Donald Knuth's quote about premature optimization](http://c2.com/cgi/wiki?PrematureOptimization):
 
