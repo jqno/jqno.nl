@@ -123,8 +123,8 @@ _November 15, 2010_
 
 * ... test `equals` methods that use a call to `getClass()`, instead of an `instanceof` check, to determine the type of the object passed in, by calling the `#useGetClass()` method on EqualsVerifier.
 * ... get a warning when you use a transient field in your `equals` or `hashCode` method. Don't worry; you can suppress this warning too.
-* ... stop worrying about adding prefab values for certain Java API classes, like `Data`, `GregorianCalendar`, or `Pattern`, to avoid that pesky recursion warning.
-* ... get a link to the [ErrorMessages Error messages] page to get more help, when EqualsVerifier finds an error.
+* ... stop worrying about adding prefab values for certain Java API classes, like `Date`, `GregorianCalendar`, or `Pattern`, to avoid that pesky recursion warning.
+* ... get a link to the [Error messages]({{ pcurl('equalsverifier/errormessages') }}) page to get more help, when EqualsVerifier finds an error.
 * ... enjoy many javadoc improvements (including the one in [Issue 32](https://code.google.com/p/equalsverifier/issues/detail?id=32)).
 * Also, the back end is almost completely re-written.
 
