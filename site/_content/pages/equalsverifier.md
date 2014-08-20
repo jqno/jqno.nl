@@ -12,14 +12,15 @@ Quick start
         &lt;dependency>
             &lt;groupId>nl.jqno.equalsverifier&lt;/groupId>
             &lt;artifactId>equalsverifier&lt;/artifactId>
-            &lt;version>1.4.1&lt;/version>
+            &lt;version>1.5&lt;/version>
             &lt;scope>test&lt;/scope>
         &lt;/dependency>
         </pre>
     * ANT users, make sure the following jars are on the classpath:
 
-        * [objenesis-1.1.jar](http://code.google.com/p/objenesis/)
-        * [cglib-nodep-2.2.jar](http://cglib.sourceforge.net/)
+        * [objenesis-2.1.jar](http://code.google.com/p/objenesis/)
+        * [cglib-3.1.jar](http://cglib.sourceforge.net/)
+        * [asm-5.0.3.jar](http://asm.ow2.org/)
         * The most recent EqualsVerifier jar. You can download it from [maven.org](http://search.maven.org/#search|gav|1|g%3A%22nl.jqno.equalsverifier%22%20AND%20a%3A%22equalsverifier%22).
 
 2. Use, as follows, in your unit test:

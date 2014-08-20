@@ -5,6 +5,18 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.5
+-----------
+_August 20, 2014_
+
+* ...use EqualsVerifer in Java 8! Classes containing Java 8 language features are now supported, and prefab values for new Java 8 API classes have been added. ([Issue 92](https://code.google.com/p/equalsverifier/issues/detail?id=92))
+* ...stop adding prefab values for [Joda-Time](http://www.joda.org/joda-time/) and [Google Guava](https://code.google.com/p/guava-libraries/), because EqualsVerifier now provides them for you. ([Issue 83](https://code.google.com/p/equalsverifier/issues/detail?id=83))
+* ...have correct error messages when your class contains multi-dimensional arrays. ([Issue 90](https://code.google.com/p/equalsverifier/issues/detail?id=90) and [Issue 94](https://code.google.com/p/equalsverifier/issues/detail?id=94))
+* ...use `Arrays.equals` instead of `Arrays.deepEquals` on `Object[]` fields. ([Issue 94](https://code.google.com/p/equalsverifier/issues/detail?id=94))
+* ...use the super class's `equals` method when specifying `#allFieldsShouldBeUsed()` ([Issue 95](https://code.google.com/p/equalsverifier/issues/detail?id=95); thanks Dean!)
+* ...get better error messages when `equals` or `hashCode` are themselves abstract.
+* ...find and understand EqualsVerifier's unit tests more easily, as they have been heavily refactored.
+
 Version 1.4.1
 -------------
 _March 18, 2014_
@@ -17,7 +29,7 @@ Version 1.4
 _December 27, 2013_
 
 * ...have confidence that EqualsVerifier covers 100% of your `equals` and `hashCode` methods. ([FAQ]({{ pcurl('equalsverifier/faq#coverage') }}))
-* ...specifically ignore certain fields using `allFieldsShouldBeUsedExcept()`. ([Issue 82](https://code.google.com/p/equalsverifier/issues/detail?id=82))
+* ...specifically ignore certain fields using `#allFieldsShouldBeUsedExcept()`. ([Issue 82](https://code.google.com/p/equalsverifier/issues/detail?id=82))
 * ...test classes that have an array field, but that don't declare an `equals` method.
 * ...get clearer error messages around abstract delegation. This clarifies especially classes that contain Joda-Time `LocalDate` fields.
 * ...stop worrying about adding prefab values for BitSet. ([Issue 86](https://code.google.com/p/equalsverifier/issues/detail?id=86))
