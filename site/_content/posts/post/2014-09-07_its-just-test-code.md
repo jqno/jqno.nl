@@ -59,13 +59,13 @@ Here's another example:
 <pre class="prettyprint">
 @Test
 public void dealGivesTheExactNumberOfCardsAsked_whenAskingSomeNumber() {
-    List<Card> hand = deck.deal(SOME_NUMBER);
+    List&lt;Card> hand = deck.deal(SOME_NUMBER);
     assertThat(hand.size(), is(SOME_NUMBER));
 }
 
 @Test
 public void dealGivesAFullHandOfCards_whenAskingTheNumberOfCardsInAHand() {
-    List<Card> hand = deck.deal(NUMBER_OF_CARDS_IN_A_HAND);
+    List&lt;Card> hand = deck.deal(NUMBER_OF_CARDS_IN_A_HAND);
     assertThat(hand.size(), is(NUMBER_OF_CARDS_IN_A_HAND));
 }
 </pre>
@@ -117,7 +117,7 @@ public void dealGivesKnownCards_whenShufflingWithAKnownSeed() {
     CardDeck deck = new CardDeck(rand);
     assertThat(deck.size(), is(52));
     deck.shuffle();
-    List<Card> hand = deck.deal(2);
+    List&lt;Card> hand = deck.deal(2);
     Card one = hand.get(0);
     assertCard(one, Value.ACE, Suite.SPADES);
     Card two = hand.get(1);
@@ -136,7 +136,7 @@ public void dealGivesKnownCards_whenShufflingWithAKnownSeed() {
     deck.shuffle();
 
     // Act
-    List<Card> hand = deck.deal(2);
+    List&lt;Card> hand = deck.deal(2);
     Card one = hand.get(0);
     Card two = hand.get(1);
 
