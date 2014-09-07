@@ -1,6 +1,6 @@
 ---
 title: Testing events in C#
-tags: [ c#, event-handling ]
+tags: [ c#, event-handling, unit-testing ]
 ---
 ## TL;DR
 
