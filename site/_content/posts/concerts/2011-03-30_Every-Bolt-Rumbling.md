@@ -1,6 +1,6 @@
 ---
 title: Every Bolt Rumbling
-tags: [ "Every Bolt Rumbling" ]
+tags: [ "Every Bolt Rumbling", "Arvind Ganga" ]
 category: "Hallogallo, Amsterdam"
 ---
 The band
