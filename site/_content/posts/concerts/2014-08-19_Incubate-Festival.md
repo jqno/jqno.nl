@@ -1,6 +1,6 @@
 ---
 title: Incubate Festival
-tags: [ "Incubate", "Arvind Ganga", "Aidan Baker / Thisquietarmy", "Angel Olsen", "65daysofstatic", "Rude 66" ]
+tags: [ "Incubate", "Arvind Ganga", "Aidan Baker", "Thisquietarmy", "Angel Olsen", "65daysofstatic", "Rude 66" ]
 category: "Tilburg"
 ---
 The Story
