@@ -26,6 +26,7 @@ Philosophy
 <a id="falsepositives"></a>
 ### Can EqualsVerifier give false positives?
 Yes, it can. EqualsVerifier will not search a class's entire state space. If you write an `equals` method as below, EqualsVerifier will not notice that it's incorrect.
+
 <pre class="prettyprint">
 public boolean equals(Object obj) {
     if (!(obj instanceof MyClass)) {
@@ -37,6 +38,7 @@ public boolean equals(Object obj) {
     return myInt == ((MyClass)obj).myInt;
 }
 </pre>
+
 The example is a little far-fetched, but it illustrates the point that you have to write bad code _on purpose_ to make EqualsVerifier think your `equals` method is correct when it is not.
 
 <a id="falsenegatives"></a>
