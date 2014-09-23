@@ -29,13 +29,14 @@ Yes, it can. EqualsVerifier will not search a class's entire state space. If you
 
 <pre class="prettyprint">
 public boolean equals(Object obj) {
-    if (!(obj instanceof MyClass)) {
+    if (!(obj instanceof Synonym)) {
         return false;
     }
-    if (myInt == 100) {
-        return false;
+    Synonym other = (Synonym)obj;
+    if ("equality".equals(word) && "sameness".equals(other.word)) {
+        return true;
     }
-    return myInt == ((MyClass)obj).myInt;
+    return word.equals(other.word);
 }
 </pre>
 
