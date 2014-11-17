@@ -64,16 +64,6 @@ Similarly, if `equals` is overridden, it can break the contract. So either shoul
 For an example of an implementation of such redefined `equals` methods, see `CanEqualColorPoint` in the EqualsVerifier's unit tests. See Chapter 28 of _Programming in Scala_ (full reference below) for an explanation of how and why this works.
 
 
-Dependencies
-------------
-EqualsVerifier needs the following libraries:
-
-* [objenesis-1.1.jar](http://code.google.com/p/objenesis/)
-* [cglib-nodep-2.2.jar](http://cglib.sourceforge.net/)
-
-Also, a unit testing framework might come in handy :). I recommend [JUnit 4](http://www.junit.org/).
-
-
 Inspiration
 -----------
 The verifications are inspired by:
