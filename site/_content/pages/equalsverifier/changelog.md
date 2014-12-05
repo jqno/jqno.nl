@@ -5,6 +5,14 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.5.1
+-------------
+_December 5, 2014_
+
+* ...use EqualsVerifier when incompatible versions of ASM and/or CGLib are on the classpath. EqualsVerifier is now shipped as an "uber jar" which contains all its dependencies inside. ([Issue 96](https://code.google.com/p/equalsverifier/issues/detail?id=96))
+* ...use EqualsVerifier with older versions of Google Guava on the classpath. ([Issue 98](https://code.google.com/p/equalsverifier/issues/detail?id=98))
+* ...build EqualsVerifier itself using Maven instead of Ant+Ivy.
+
 Version 1.5
 -----------
 _August 20, 2014_

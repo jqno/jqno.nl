@@ -103,7 +103,7 @@ First, check out the code. You can open the project in Eclipse, or you can run A
 
 <a id="eclipseresolvedeps"></a>
 ### Why can't Eclipse resolve the dependencies?
-EqualsVerifier uses [Apache Ivy](http://ant.apache.org/ivy/) to resolve all dependencies. If you want EqualsVerifier to compile in Eclipse, you need to install the [IvyDE](http://ant.apache.org/ivy/ivyde/) plugin, which will take care of the dependencies for you.
+Until version 1.5, EqualsVerifier used [Apache Ivy](http://ant.apache.org/ivy/) to resolve all dependencies. If you want these older versions of EqualsVerifier to compile in Eclipse, you need to install the [IvyDE](http://ant.apache.org/ivy/ivyde/) plugin, which will take care of the dependencies for you.
 
 <a id="genericserrors"></a>
 ### I get generics errors while building
