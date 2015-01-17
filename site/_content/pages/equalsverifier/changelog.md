@@ -5,6 +5,20 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.6
+-----------
+_January 17, 2015_
+
+* ...set default @Nonnull annotations on your classes ([Issue 50](https://code.google.com/p/equalsverifier/issues/detail?id=50))
+    * using Findbugs's `@DefaultAnnotation` or `@DefaultAnnotationForFields`.
+    * using a JSR 305 annotation (see [this StackOverflow question](http://stackoverflow.com/q/11776302/127863)).
+    * you can put them on the class, or on the package.
+    * you can override the default by placing `@Nullable` or `@CheckForNull` on a field.
+* ...verify stateless classes. ([Issue 46](https://code.google.com/p/equalsverifier/issues/detail?id=46))
+* ...verify classes with stateless fields. ([Issue 100](https://code.google.com/p/equalsverifier/issues/detail?id=100) and [Issue 101](https://code.google.com/p/equalsverifier/issues/detail?id=101))
+* ...verify the consistency of `hashCode` in a stateless object. ([Issue 97](https://code.google.com/p/equalsverifier/issues/detail?id=97&colspec=ID%20Type%20Status%20Priority%20Milestone%20Reporter%20Summary))
+* ...verify classes where equality is fully defined in a superclass, for example using Apache Commons's [`EqualsBuilder.reflectionEquals`](http://commons.apache.org/proper/commons-lang/javadocs/api-3.3.2/org/apache/commons/lang3/builder/EqualsBuilder.html#reflectionEquals%28java.lang.Object,%20java.lang.Object,%20boolean%29). ([Issue 102](https://code.google.com/p/equalsverifier/issues/detail?id=102))
+
 Version 1.5.1
 -------------
 _December 5, 2014_
