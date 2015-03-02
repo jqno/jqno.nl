@@ -12,7 +12,7 @@ And two variables, `original` and `clone`, containing a value of said enum. Here
 
 ![Call Me Maybe]({{ assets['CallMeMaybe'] }})
 
-So, what do we see here? We see two variables of type `EnumHack$CallMe` (the enum was an inner class, so that makes sense). Both enums have the same `name` and `ordinal`, so they are equal. They also have different ids (33 and 37, respectively), so they're not the same object.
+So, what do we see here? We see two variables of type `EnumHack$CallMe` (the enum was an inner class, so that makes sense). Both enums have the same `name` and `ordinal`, so they are equal. They also have different ids (33 and 34, respectively), so they're not the same object.
 
 Wait, what!?
 
