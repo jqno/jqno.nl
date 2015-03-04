@@ -5,6 +5,15 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7
+-----------
+_March 4, 2015_
+
+* ...verify classes that cached their hashCode, using `#withCachedHashCode()`. ([Issue 60](https://code.google.com/p/equalsverifier/issues/detail?id=60))
+* ...avoid adding prefab values for several Java Collections interface classes, including `SortedSet` and `TreeSet`. ([Issue 103](https://code.google.com/p/equalsverifier/issues/detail?id=103))
+* ...get an error message when you accidentally use `==` instead of `equals` on an object field inside your `equals` method, and suppress this using `Warning.REFERENCE_EQUALITY`. ([Issue 104](https://code.google.com/p/equalsverifier/issues/detail?id=104))
+
+
 Version 1.6
 -----------
 _January 17, 2015_
