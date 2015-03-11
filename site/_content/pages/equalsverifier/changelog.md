@@ -5,6 +5,14 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.1
+-------------
+_March 11, 2015_
+
+* ...Use EqualsVerifier again, without suppressing 1.7's `REFERENCE_EQUALITY` warning, on classes containing:
+    * certain interfaces, and classes which don't redefine `equals`.  (Issue 105, [Comment 6](https://code.google.com/p/equalsverifier/issues/detail?id=104#c6))
+    * a static final lambda field. ([Issue 105](https://code.google.com/p/equalsverifier/issues/detail?id=105))
+
 Version 1.7
 -----------
 _March 4, 2015_
