@@ -10,4 +10,4 @@ You can...
 * review the [changelog]({{ pcurl('equalsverifier/changelog') }});
 * get [explanations for specific error messages]({{ pcurl('equalsverifier/errormessages') }});
 * ask a question on [the Google Group disccusion forum](https://groups.google.com/forum/?fromgroups#!forum/equalsverifier);
-* open [an issue](https://code.google.com/p/equalsverifier/issues/list).
+* open [an issue](https://github.com/jqno/equalsverifier/issues).
