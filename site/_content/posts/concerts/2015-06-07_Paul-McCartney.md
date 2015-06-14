@@ -2,6 +2,9 @@
 title: Paul McCartney
 tags: [ "Paul McCartney" ]
 category: "Ziggo Dome, Amsterdam"
+picasa_user_id: 110660365905793904078
+picasa_album_id: 6160209811409975153
+picasa_auth_key: CJX1t_6Y2YCxbw
 ---
 Setlist
 -------
