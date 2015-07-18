@@ -5,19 +5,27 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.3
+-------------
+_July 18, 2015_
+
+* ...use a protected or default-visibility `cachedHashCode` field with `#withCachedHashCode()`. ([Issue 110](https://code.google.com/p/equalsverifier/issues/detail?id=110))
+* ...have a static final field with `null` value without getting a `NullPointerException`. ([Issue 116](https://code.google.com/p/equalsverifier/issues/detail?id=116))
+* ...know that several things have been improved behind-the-scenes :).
+
 Version 1.7.2
 -------------
 _March 28, 2015_
 
-* ...Use Eclipse's JDT null annotations, including the Java 8 style type annotations.
-* ...Have a static field with an empty array in the class under test, without getting an `ArrayIndexOutOfBoundsException`. ([Issue 106](https://code.google.com/p/equalsverifier/issues/detail?id=106))
-* ...Revel in the fact that all dependencies have been updated ([Issue 107](https://code.google.com/p/equalsverifier/issues/detail?id=107)) and that several potential bugs have been solved using [PIT](http://pitest.org/).
+* ...use Eclipse's JDT null annotations, including the Java 8 style type annotations.
+* ...have a static field with an empty array in the class under test, without getting an `ArrayIndexOutOfBoundsException`. ([Issue 106](https://code.google.com/p/equalsverifier/issues/detail?id=106))
+* ...revel in the fact that all dependencies have been updated ([Issue 107](https://code.google.com/p/equalsverifier/issues/detail?id=107)) and that several potential bugs have been solved using [PIT](http://pitest.org/).
 
 Version 1.7.1
 -------------
 _March 11, 2015_
 
-* ...Use EqualsVerifier again, without suppressing 1.7's `REFERENCE_EQUALITY` warning, on classes containing:
+* ...use EqualsVerifier again, without suppressing 1.7's `REFERENCE_EQUALITY` warning, on classes containing:
     * certain interfaces, and classes which don't redefine `equals`.  (Issue 105, [Comment 6](https://code.google.com/p/equalsverifier/issues/detail?id=104#c6))
     * a static final lambda field. ([Issue 105](https://code.google.com/p/equalsverifier/issues/detail?id=105))
 
