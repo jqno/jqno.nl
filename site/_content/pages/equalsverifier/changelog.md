@@ -5,6 +5,16 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.4
+-------------
+_August 17, 2015_
+
+* ...avoid adding prefab values for
+    * JavaFX (Java 8 only), ([Issue 120](https://github.com/jqno/equalsverifier/issues/120))
+    * `javax.naming.Reference`. ([Issue 118](https://github.com/jqno/equalsverifier/issues/118))
+* ...avoid exceptions thrown from SBT. ([Issue 119](https://github.com/jqno/equalsverifier/issues/119))
+* ...get better reporting on subclasses of versioned entities. ([Issue 123](https://github.com/jqno/equalsverifier/issues/123))
+
 Version 1.7.3
 -------------
 _July 18, 2015_
