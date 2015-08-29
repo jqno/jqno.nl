@@ -5,6 +5,15 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.5
+-------------
+_August 29, 2015_
+
+* ...get symmetry warnings if the symmetry violation only occurs in the subclass of a versioned entity. (Issue 123, [Comment 10](https://github.com/jqno/equalsverifier/issues/123#issuecomment-134201349))
+* ...get a warning when the id check on a versioned entity is implemented incorrectly. (Issue 123, [Comment 17](https://github.com/jqno/equalsverifier/issues/123#issuecomment-133151013))
+* ...omit suppression of `Warning.NONFINAL_FIELDS` on classes marked `@Embeddable` and `@MappedSuperclass`. ([Issue 124](https://github.com/jqno/equalsverifier/issues/124) and Issue 123, [Comment 15](https://github.com/jqno/equalsverifier/issues/123#issuecomment-134168785))
+* ...use singleton enums without null-checking. ([Issue 125](https://github.com/jqno/equalsverifier/issues/125))
+
 Version 1.7.4
 -------------
 _August 17, 2015_
