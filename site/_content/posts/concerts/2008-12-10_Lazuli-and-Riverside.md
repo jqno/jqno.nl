@@ -59,8 +59,8 @@ Riverside
 
 * _vocals, bass_: Mariusz Duda
 * _guitar_: Piotr Grudziński
-* _keys_: Piotr Kozieradzki
-* _drums_: Michał Łapaj
+* _keys_: Michał Łapaj
+* _drums_: Piotr Kozieradzki
 
 The company
 -----------
