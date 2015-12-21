@@ -12,7 +12,7 @@ Quick start
         &lt;dependency>
             &lt;groupId>nl.jqno.equalsverifier&lt;/groupId>
             &lt;artifactId>equalsverifier&lt;/artifactId>
-            &lt;version>1.7.5&lt;/version>
+            &lt;version>1.7.6&lt;/version>
             &lt;scope>test&lt;/scope>
         &lt;/dependency>
         </pre>

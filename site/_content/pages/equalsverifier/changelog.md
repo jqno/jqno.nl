@@ -5,6 +5,13 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.6
+-------------
+_December 21, 2015_
+
+* ... have a field whose type is an interface that defines `equals`. ([Issue 130](https://github.com/jqno/equalsverifier/issues/130))
+* ... get 100% mutation coverage with [PIT](http://pitest.org/) on your `equals` and `hashCode` methods. ([Issue 131](https://github.com/jqno/equalsverifier/issues/131))
+
 Version 1.7.5
 -------------
 _August 29, 2015_
