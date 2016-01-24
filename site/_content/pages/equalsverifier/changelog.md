@@ -5,6 +5,12 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.7
+-------------
+_January 18, 2016_
+
+* ... use EqualsVerifier together with Cobertura. ([Issue 132](https://github.com/jqno/equalsverifier/issues/132))
+
 Version 1.7.6
 -------------
 _December 21, 2015_
