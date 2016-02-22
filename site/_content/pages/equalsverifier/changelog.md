@@ -245,7 +245,7 @@ Version 0.6.3
 _May 18, 2010_
 
 * ... test the equals/hashCode contract for classes that don't override `equals` or `hashCode`. ([Issue 23](https://github.com/jqno/equalsverifier/issues/23))
-* ... use EqualsVerifier in conjuction with the [http://www.eclemma.org/ EclEmma] code coverage tool. ([Issue 22](https://github.com/jqno/equalsverifier/issues/22))
+* ... use EqualsVerifier in conjuction with the [EclEmma](http://www.eclemma.org/) code coverage tool. ([Issue 22](https://github.com/jqno/equalsverifier/issues/22))
 * ... test classes that contain (indirect) references to non-static inner classes, without getting messages about recursive data structures. ([Issue 21](https://github.com/jqno/equalsverifier/issues/21))
 
 Version 0.6.2
