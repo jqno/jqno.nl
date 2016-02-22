@@ -20,6 +20,8 @@ EqualsVerifier requires Java 6 or higher.
         </pre>
     * ANT users, make sure the most recent EqualsVerifier jar is on the classpath. You can download it from [maven.org](http://search.maven.org/#search|gav|1|g%3A%22nl.jqno.equalsverifier%22%20AND%20a%3A%22equalsverifier%22).
 
+    EqualsVerifier doesn't have any dependencies of its own.
+
 2. Use, as follows, in your unit test:
     <pre class="prettyprint">
     @Test
