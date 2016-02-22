@@ -5,6 +5,8 @@ layout: equalsverifier
 ---
 Quick start
 -----------
+EqualsVerifier requires Java 6 or higher.
+
 1. Get EqualsVerifier.
     * Maven users, add this to your POM:
 
