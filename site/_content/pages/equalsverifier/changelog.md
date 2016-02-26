@@ -5,18 +5,24 @@ layout: equalsverifier
 ---
 What's new? Well, you can now ...
 
+Version 1.7.8
+-------------
+_February 26, 2016_
+
+* ...use EqualsVerifier and Java 8's `-parameters` compiler option in the same project.
+
 Version 1.7.7
 -------------
 _January 18, 2016_
 
-* ... use EqualsVerifier together with Cobertura. ([Issue 132](https://github.com/jqno/equalsverifier/issues/132))
+* ...use EqualsVerifier together with Cobertura. ([Issue 132](https://github.com/jqno/equalsverifier/issues/132))
 
 Version 1.7.6
 -------------
 _December 21, 2015_
 
-* ... have a field whose type is an interface that defines `equals`. ([Issue 130](https://github.com/jqno/equalsverifier/issues/130))
-* ... get 100% mutation coverage with [PIT](http://pitest.org/) on your `equals` and `hashCode` methods. ([Issue 131](https://github.com/jqno/equalsverifier/issues/131))
+* ...have a field whose type is an interface that defines `equals`. ([Issue 130](https://github.com/jqno/equalsverifier/issues/130))
+* ...get 100% mutation coverage with [PIT](http://pitest.org/) on your `equals` and `hashCode` methods. ([Issue 131](https://github.com/jqno/equalsverifier/issues/131))
 
 Version 1.7.5
 -------------
