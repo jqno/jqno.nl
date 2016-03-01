@@ -16,6 +16,8 @@ Version 2.0
 -----------
 _???_
 
+If you're upgrading from EqualsVerifier 1, please see the [migration guide]({{ pcurl('equalsverifier/migration1to2') }}).
+
 * ...no longer use EqualsVerifier with Java 6.
 * ...no longer use `EqualsVerifier.forExamples`. Use `#forClass` or `#forRelaxedEqualExamples` instead.
 * ...no longer use `#debug()` (which didn't do anything, anyway).
