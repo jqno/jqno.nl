@@ -3,7 +3,38 @@ title: Changelog
 blog: equalsverifier
 layout: equalsverifier
 ---
-What's new? Well, you can now ...
+What's new?
+
+* In [version 1.x](#1.x)
+* In [version 2.x](#2.x)
+
+Well, you can now ...
+
+<a name="2.x"/>
+
+Version 2.0
+-----------
+_???_
+
+* ...no longer use EqualsVerifier with Java 6.
+* ...no longer use `EqualsVerifier.forExamples`. Use `#forClass` or `#forRelaxedEqualExamples` instead.
+* ...no longer use `#debug()` (which didn't do anything, anyway).
+* ...expect "all fields should be used" to be the default behaviour. ([Issue 65](https://github.com/jqno/equalsverifier/issues/65))
+    * Suppress `Warning.ALL_FIELDS_SHOULD_BE_USED` to revert back to the old behaviour.
+    * `#forRelaxedEqualExamples` implicitly suppresses `Warning.ALL_FIELDS_SHOULD_BE_USED`.
+    * Suppressing `Warning.IDENTICAL_COPY_FOR_VERSIONED_ENTITY` implicitly suppresses `Warning.ALL_FIELDS_SHOULD_BE_USED`.
+    * `#allFieldsShouldBeUsedExcept()` is now removed.
+    * Use `#withIgnoredFields()` to disregard specific fields, while expecting all remaining fields to be used in `equals`.
+    * Use `#withOnlyTheseFields()` to expect that the given fields are used, and that the remaining fields are not used. ([Issue 128](https://github.com/jqno/equalsverifier/issues/128))
+* ...expect EqualsVerifier to fail when `equals` isn't overridden (i.e., inherited directly from `Object`). ([Issue 66](https://github.com/jqno/equalsverifier/issues/66))
+    * Suppress `Warning.INHERITED_DIRECTLY_FROM_OBJECT` to revert back to the old behaviour.
+* ...refer to the generic contents of containers, such as `List` and `Optional`, in the implementation of `equals` and `hashCode`. ([Issue 84](https://github.com/jqno/equalsverifier/issues/84))
+* ...get more useful information from the stack trace if EqualsVerifier fails.
+* ...have better compatibility with Java 8. ([Issue 115](https://github.com/jqno/equalsverifier/issues/115))
+* ...know that EqualsVerifier's code quality has been improved, as a result of adding CheckStyle and FindBugs, and doing mutation tests with PIT.
+
+
+<a name="1.x"/>
 
 Version 1.7.8
 -------------
