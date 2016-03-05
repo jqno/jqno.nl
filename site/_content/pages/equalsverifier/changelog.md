@@ -10,7 +10,7 @@ What's new?
 
 Well, you can now ...
 
-<a name="2.x"/>
+<a name="2.x"></a>
 
 Version 2.0
 -----------
@@ -36,7 +36,7 @@ If you're upgrading from EqualsVerifier 1, please see the [migration guide]({{ p
 * ...know that EqualsVerifier's code quality has been improved, as a result of adding CheckStyle and FindBugs, and doing mutation tests with PIT.
 
 
-<a name="1.x"/>
+<a name="1.x"></a>
 
 Version 1.7.8
 -------------
