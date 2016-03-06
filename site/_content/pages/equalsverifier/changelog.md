@@ -3,18 +3,16 @@ title: Changelog
 blog: equalsverifier
 layout: equalsverifier
 ---
-What's new?
+* What's new in [version 1.x](#1.x)?
+* What's new in [version 2.x](#2.x)?
 
-* In [version 1.x](#1.x)
-* In [version 2.x](#2.x)
-
-Well, you can now ...
+**Well, you can now ...**
 
 <a name="2.x"></a>
 
 Version 2.0
 -----------
-_???_
+_March 6, 2016_
 
 If you're upgrading from EqualsVerifier 1, please see the [migration guide]({{ pcurl('equalsverifier/migration1to2') }}).
 
