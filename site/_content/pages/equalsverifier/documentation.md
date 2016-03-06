@@ -10,7 +10,7 @@ Usage
 -----
 Use, within unit test method, as follows:
 
-* Create an instance of EqualsVerifier. Either call `#forExamples(Object, Object, Object...)` to supply at least two instances of the class under test that are not equal to one another, or call `#forClass(Class)` to supply a reference to the class itself to let the EqualsVerifier instantiate objects.
+* Create an instance of EqualsVerifier. Call {@link #forClass(Class)} to supply a reference to the class that contains the {@code equals} method to test. Also, {@link #forRelaxedEqualExamples(Object, Object, Object...)} can be used if the class under test has relaxed equality rules, for example, if the contents of two fields of the same type can be interchanged without breaking equality.
 * If the class under test is designed for inheritance, and the `equals` and `hashCode` methods can be overridden, an instance of the class is not permitted to be equal to an instance of a subclass, even though all the relevant fields are equal. Call `#withRedefinedSubclass(Class)` to supply a reference to such a subclass, or call `suppress(Warning)` with `Warning.STRICT_INHERITANCE` to disable the check.
 * Call `suppress(Warning)` to suppress warnings given by EqualsVerifier.
 * Call `#verify()` to perform the actual verifications.
