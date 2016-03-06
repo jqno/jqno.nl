@@ -5,7 +5,9 @@ layout: equalsverifier
 ---
 Quick start
 -----------
-EqualsVerifier requires Java 6 or higher.
+EqualsVerifier 2.0 requires Java 7 or higher. EqualsVerifier 1.x requires Java 6 or higher.
+
+If you are upgrading from version 1 to version 2, please see the [migration guide]({{ pcurl('equalsverifier/migration1to2') }}).
 
 1. Get EqualsVerifier.
     * Maven users, add this to your POM:
@@ -14,7 +16,7 @@ EqualsVerifier requires Java 6 or higher.
         &lt;dependency>
             &lt;groupId>nl.jqno.equalsverifier&lt;/groupId>
             &lt;artifactId>equalsverifier&lt;/artifactId>
-            &lt;version>1.7.8&lt;/version>
+            &lt;version>2.0&lt;/version>
             &lt;scope>test&lt;/scope>
         &lt;/dependency>
         </pre>
