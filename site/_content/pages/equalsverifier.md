@@ -5,7 +5,7 @@ layout: equalsverifier
 ---
 Quick start
 -----------
-EqualsVerifier requires Java 7 or higher.
+EqualsVerifier 2.0 requires Java 7 or higher. EqualsVerifier 1.x requires Java 6 or higher.
 
 If you are upgrading from version 1 to version 2, please see the [migration guide]({{ pcurl('equalsverifier/migration1to2') }}).
 
