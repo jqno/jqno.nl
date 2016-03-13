@@ -10,6 +10,14 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.0.1
+-------------
+_March 13, 2016_
+
+* ...test classes that have a static final reference to a recursive data structure, without adding prefab values.
+* ...test classes that have a generic parameter that extends `Comparable`. ([Issue 136](https://github.com/jqno/equalsverifier/issues/136))
+* ...no longer have `com.google.code.findbugs.annotations` show up on your classpath. ([Issue 135](https://github.com/jqno/equalsverifier/issues/135))
+
 Version 2.0
 -----------
 _March 6, 2016_
