@@ -10,6 +10,13 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.0.2
+-------------
+_April 3, 2016_
+
+* ...test classes that implement an abstract class that calls an abstract method in its `equals` or `hashCode` methods. ([Issue 138](https://github.com/jqno/equalsverifier/issues/138))
+* ...use EqualsVerifier on a JVM that doesn't have `javax.naming.Reference` available. ([Issue 114](https://github.com/jqno/equalsverifier/issues/114))
+
 Version 2.0.1
 -------------
 _March 13, 2016_
