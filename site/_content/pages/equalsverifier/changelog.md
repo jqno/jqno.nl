@@ -16,7 +16,7 @@ _May 22, 2016_
 
 * ...suppress `Warning.STRICT_HASHCODE` to let EqualsVerifier allow `hashCode` methods that don't use all the fields that are also used in `equals`, or even constant `hashCode`s. ([Issue 142](https://github.com/jqno/equalsverifier/issues/142))
 * ...assert, within a class's `equals` or `hashCode` method, on the length of its array field. ([Issue 143](https://github.com/jqno/equalsverifier/issues/143))
-* ...get an equalsverifier.jar file without Objenesis's meta-data in the `META-INF` folder. ([Issue 142](https://github.com/jqno/equalsverifier/issues/142))
+* ...get an equalsverifier.jar file without Objenesis's meta-data in the `META-INF` folder. ([Issue 144](https://github.com/jqno/equalsverifier/issues/144))
 * ...no longer get a `ReflectionException` when EqualsVerifier is unable to read annotations on fields in certain situations. (Issue 14, [Comment 21](https://github.com/jqno/equalsverifier/issues/114#issuecomment-206463710))
 
 Version 2.0.2
