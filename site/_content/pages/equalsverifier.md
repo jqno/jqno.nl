@@ -16,7 +16,7 @@ If you are upgrading from version 1 to version 2, please see the [migration guid
         &lt;dependency>
             &lt;groupId>nl.jqno.equalsverifier&lt;/groupId>
             &lt;artifactId>equalsverifier&lt;/artifactId>
-            &lt;version>2.1&lt;/version>
+            &lt;version>2.1.1&lt;/version>
             &lt;scope>test&lt;/scope>
         &lt;/dependency>
         </pre>

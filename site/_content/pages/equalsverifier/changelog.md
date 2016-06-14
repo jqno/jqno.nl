@@ -10,6 +10,13 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.1.1
+-------------
+_June 14, 2016_
+
+* ...not get VerifyErrors in certain situations, such as when running unit tests with coverage in IntelliJ. ([Issue 147](https://github.com/jqno/equalsverifier/issues/147))
+* ...have the (current) latest version of ByteBuddy. ([Issue 145](https://github.com/jqno/equalsverifier/issues/145))
+
 Version 2.1
 -----------
 _May 22, 2016_
