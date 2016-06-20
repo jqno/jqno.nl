@@ -10,12 +10,18 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.1.2
+-------------
+_June 20, 2016_
+
+* ...use EqualsVerifier concurrently. ([Issue 148](https://github.com/jqno/equalsverifier/pull/148); thanks Borys!)
+
 Version 2.1.1
 -------------
 _June 14, 2016_
 
 * ...not get VerifyErrors in certain situations, such as when running unit tests with coverage in IntelliJ. ([Issue 147](https://github.com/jqno/equalsverifier/issues/147))
-* ...have the (current) latest version of ByteBuddy. ([Issue 145](https://github.com/jqno/equalsverifier/issues/145))
+* ...have the (current) latest version of ByteBuddy. ([Issue 145](https://github.com/jqno/equalsverifier/issues/145); thanks Vincent!)
 
 Version 2.1
 -----------
@@ -39,7 +45,7 @@ _March 13, 2016_
 
 * ...test classes that have a static final reference to a recursive data structure, without adding prefab values.
 * ...test classes that have a generic parameter that extends `Comparable`. ([Issue 136](https://github.com/jqno/equalsverifier/issues/136))
-* ...no longer have `com.google.code.findbugs.annotations` show up on your classpath. ([Issue 135](https://github.com/jqno/equalsverifier/issues/135))
+* ...no longer have `com.google.code.findbugs.annotations` show up on your classpath. ([Issue 135](https://github.com/jqno/equalsverifier/issues/135); thanks Stephan!)
 
 Version 2.0
 -----------
