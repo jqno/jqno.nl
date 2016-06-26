@@ -2,7 +2,7 @@
 title: Generics in EqualsVerifier, part 1: Overcoming type erasure
 tags: [ equalsverifier, generics ]
 ---
-This is part 1 of a two-part series. This part deals with overcoming type erasure. In Part 2, we will see what EqualsVerifier can do with this generic type information.
+This is part 1 of a two-part series. This part deals with overcoming type erasure. In [Part 2]({{ pcposturl(2016, 06, 26, "generics-in-equalsverifier-part-2") }}), we will see what EqualsVerifier can do with this generic type information.
 
 Introduction
 ---
@@ -168,5 +168,5 @@ You might have noticed that I haven't discussed multiple bounds, like `T extends
 
 Summary
 ---
-We have seen how we can determine the full, generic type of a class's field. In Part 2, we will see how we can put this information to good use.
+We have seen how we can determine the full, generic type of a class's field. In [Part 2]({{ pcposturl(2016, 06, 26, "generics-in-equalsverifier-part-2") }}), we will see how we can put this information to good use.
 
