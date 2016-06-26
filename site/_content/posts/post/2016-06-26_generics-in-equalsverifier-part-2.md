@@ -1,6 +1,6 @@
 ---
 title: Generics in EqualsVerifier, part 2: Instantiating generic classes
-tags: [ equalsverifier, generic ]
+tags: [ equalsverifier, generics ]
 ---
 In [Part 1]({{ pcposturl(2016, 06, 23, "generics-in-equalsverifier-part-1") }}) of this two-part series, we have explored how to determine the full, generic type of a class's fields. Now it's time to do something with this information: instantiate an object of any given type.
 
