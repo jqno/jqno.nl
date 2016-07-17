@@ -10,6 +10,12 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.1.3
+-------------
+_July 17, 2016_
+
+* ...use EqualsVerifier when older versions of Google Guava are on the classpath. ([Issue 149](https://github.com/jqno/equalsverifier/issues/149))
+
 Version 2.1.2
 -------------
 _June 20, 2016_
