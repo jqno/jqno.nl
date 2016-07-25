@@ -10,6 +10,12 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.1.4
+-------------
+_July 25, 2016_
+
+* ...Use Guava's Range with full reflection support. ([Issue 150](https://github.com/jqno/equalsverifier/pull/150); thanks Stephan!)
+
 Version 2.1.3
 -------------
 _July 17, 2016_
