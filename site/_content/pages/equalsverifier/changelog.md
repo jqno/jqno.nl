@@ -10,11 +10,17 @@ layout: equalsverifier
 
 <a name="2.x"></a>
 
+Version 2.1.5
+-------------
+_August 6, 2016_
+
+* ...avoid adding prefab values for `java.util.Vector` and `java.util.Stack`. ([Issue 151](https://github.com/jqno/equalsverifier/pull/151))
+
 Version 2.1.4
 -------------
 _July 25, 2016_
 
-* ...Use Guava's Range with full reflection support. ([Issue 150](https://github.com/jqno/equalsverifier/pull/150); thanks Stephan!)
+* ...use Guava's Range with full reflection support. ([Issue 150](https://github.com/jqno/equalsverifier/pull/150); thanks Stephan!)
 
 Version 2.1.3
 -------------
